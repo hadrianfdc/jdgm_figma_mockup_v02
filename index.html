@@ -1493,16 +1493,16 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
     <section class="section">
       <div class="section-inner">
         <div class="blog-filters">
-          <button class="filter-btn active">All Posts</button>
-          <button class="filter-btn">Field Reports</button>
-          <button class="filter-btn">Impact Stories</button>
-          <button class="filter-btn">Prayer Requests</button>
-          <button class="filter-btn">Disaster Response</button>
-          <button class="filter-btn">Uganda</button>
+          <button class="filter-btn active" data-filter="all">All Posts</button>
+          <button class="filter-btn" data-filter="Field Reports">Field Reports</button>
+          <button class="filter-btn" data-filter="Impact Stories">Impact Stories</button>
+          <button class="filter-btn" data-filter="Prayer Requests">Prayer Requests</button>
+          <button class="filter-btn" data-filter="Disaster Response">Disaster Response</button>
+          <button class="filter-btn" data-filter="Uganda">Uganda</button>
         </div>
 
         <div class="blog-grid">
-          <div class="blog-card">
+          <div class="blog-card" data-categories="Field Reports">
             <div class="blog-img-area" style="background-image:url('./hungrychild.jpeg');"></div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge badge-green">Field Report</span><span class="blog-date">March 15, 2025</span></div>
@@ -1511,7 +1511,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
               <div class="blog-link">Read full report →</div>
             </div>
           </div>
-          <div class="blog-card">
+          <div class="blog-card" data-categories="Uganda, Field Reports">
             <div class="blog-img-area" style="background-image:url('./cleanwaters.jpg');"></div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge" style="background:#DBEAFE;color:#1D4ED8;">Uganda</span><span class="blog-date">February 28, 2025</span></div>
@@ -1520,7 +1520,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
               <div class="blog-link">Read the story →</div>
             </div>
           </div>
-          <div class="blog-card">
+          <div class="blog-card" data-categories="Impact Stories">
             <div class="blog-img-area" style="background-image:url('./malnurish.jpeg');"></div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge badge-gold">Impact Story</span><span class="blog-date">February 10, 2025</span></div>
@@ -1529,7 +1529,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
               <div class="blog-link">Read Marco's story →</div>
             </div>
           </div>
-          <div class="blog-card">
+          <div class="blog-card" data-categories="Disaster Response">
             <div class="blog-img-area" style="background-image:url('./medicalmission.jpeg');"></div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge" style="background:#FBEAF0;color:#993556;">Medical</span><span class="blog-date">January 22, 2025</span></div>
@@ -1538,7 +1538,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
               <div class="blog-link">Read the report →</div>
             </div>
           </div>
-          <div class="blog-card">
+          <div class="blog-card" data-categories="Prayer Requests">
             <div class="blog-img-area" style="background-image:url('./expandpartnership.jpeg');"></div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge" style="background:#F8E8F2;color:#C065A0;">Anti-Trafficking</span><span class="blog-date">January 5, 2025</span></div>
@@ -1547,7 +1547,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
               <div class="blog-link">Read the announcement →</div>
             </div>
           </div>
-          <div class="blog-card">
+          <div class="blog-card" data-categories="Impact Stories">
             <div class="blog-img-area" style="background-image:url('./18children.jpeg');"></div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge badge-gold">Education</span><span class="blog-date">December 18, 2024</span></div>
@@ -1573,6 +1573,32 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
     </section>
   </div>
 </div>
+
+<script>
+(function() {
+  const filterButtons = document.querySelectorAll('.blog-filters .filter-btn');
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  function applyFilter(filter) {
+    blogCards.forEach(card => {
+      if (filter === 'all') {
+        card.style.display = '';
+        return;
+      }
+      const categories = (card.dataset.categories || '').split(',').map(s => s.trim());
+      card.style.display = categories.includes(filter) ? '' : 'none';
+    });
+  }
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      applyFilter(this.dataset.filter || 'all');
+    });
+  });
+})();
+</script>
 
 <!-- ============================================================ -->
 <!-- FRAME 5: CONTACT                                              -->
