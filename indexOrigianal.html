@@ -573,7 +573,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 .filter-btn.active { background:var(--brand-mid); color:#fff; border-color:var(--brand-mid); }
 .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
 .blog-card { background:#fff; border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--border); }
-.blog-img-area { height:200px; background-size:cover; background-position:center; background-repeat:no-repeat; }
+.blog-img-area { height:200px; display:flex; align-items:center; justify-content:center; font-size:52px; }
 .blog-body { padding:22px; }
 .blog-meta { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
 .blog-date { font-size:11px; color:var(--text-muted); }
@@ -835,85 +835,311 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 .ab-item { font-size:13px; color:var(--text-muted); }
 .ab-sep { font-size:12px; color:var(--text-hint); }
 .ab-current { font-size:13px; color:var(--text-dark); font-weight:500; }
-
-/* =============================================
-   PAYMENT METHOD SELECTOR — Frame 02
-   ============================================= */
-.pay-method-selector { display:flex; gap:10px; margin-bottom:16px; }
-.pay-tab {
-  flex:1; padding:12px 16px; border:2px solid #E8E5E0; border-radius:var(--r-md);
-  background:#fff; cursor:pointer; font-family:'DM Sans',sans-serif;
-  font-size:13px; font-weight:600; color:var(--text-muted);
-  display:flex; align-items:center; justify-content:center; gap:8px; transition:all 0.15s;
-}
-.pay-tab.active { border-color:#007DFF; color:#007DFF; background:#EFF6FF; }
-.pay-tab:hover:not(.active) { border-color:#C0BDB8; color:var(--text-dark); }
-.gcash-panel {
-  border:1.5px solid #E8E5E0; border-radius:var(--r-lg); padding:20px; background:#fff;
-}
-.gcash-header { display:flex; align-items:center; gap:12px; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #F0EFED; }
-.gcash-logo-badge {
-  width:44px; height:44px; border-radius:12px; background:#007DFF;
-  display:flex; align-items:center; justify-content:center;
-  font-size:22px; font-weight:900; color:#fff; font-family:'DM Sans',sans-serif; flex-shrink:0;
-}
-.gcash-label { font-size:15px; font-weight:700; color:var(--text-dark); }
-.gcash-sublabel { font-size:12px; color:var(--text-muted); margin-top:2px; }
-.gcash-steps { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
-.gcash-step { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--text-body); line-height:1.5; }
-.gcash-step-num {
-  width:22px; height:22px; border-radius:50%; background:#EFF6FF; color:#007DFF;
-  font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;
-  flex-shrink:0; margin-top:1px;
-}
-.gcash-note {
-  margin-top:16px; background:#EFF6FF; border-radius:var(--r-md);
-  padding:10px 14px; font-size:12px; color:#1E40AF;
-  display:flex; gap:8px; align-items:flex-start; line-height:1.6;
-}
-.gcash-divider { text-align:center; font-size:11px; color:var(--text-hint); margin:14px 0 4px; letter-spacing:1px; }
-
-/* =============================================
-   JDGM REAL-SITE COLOR SCHEME — Frame 02 & 04
-   Overrides green brand palette → warm orange
-   ============================================= */
-.jdgm-real {
-  --brand-mid:    #C87516;
-  --brand-bright: #C87516;
-  --brand-light:  #E8A94D;
-  --brand-pale:   #FEF3E2;
-  --gold:         #C87516;
-}
-.jdgm-real .navbar {
-  background: #FFFFFF;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.09);
-}
-.jdgm-real .logo-mark {
-  background: #C87516;
-  color: #fff;
-}
-.jdgm-real .logo-text { color: #1D1D1B; }
-.jdgm-real .nav-link  { color: #C87516; }
-.jdgm-real .nav-link.active { color: #9C5B0A; font-weight: 600; }
-.jdgm-real .nav-cta   { background: #C87516; color: #fff; }
 </style>
 </head>
 <body>
 <div class="figma-canvas">
 
 <!-- ============================================================ -->
+<!-- FRAME 1: HOMEPAGE                                             -->
+<!-- ============================================================ -->
+<div>
+  <div class="frame-label">Frame 01 — Homepage (1440px)</div>
+  <div class="frame">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <div class="logo-mark">✦</div>
+        <div class="logo-text">Johnny Davis<br>Global Missions</div>
+      </div>
+      <div class="nav-links">
+        <a class="nav-link">Our Work</a>
+        <a class="nav-link">About</a>
+        <a class="nav-link">Stories</a>
+        <a class="nav-link">Volunteer</a>
+        <a class="nav-link">Blog</a>
+        <a class="nav-link">Contact</a>
+        <a class="nav-cta">♡ Donate Now</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span class="hero-badge-text">Active in Philippines &amp; Uganda · Est. 2022</span>
+        </div>
+        <h1 class="hero-headline">Where Faith Meets<br><em>Compassionate</em><br>Action</h1>
+        <p class="hero-sub">Feeding children, building water wells, rescuing the vulnerable — your gift today changes a real life in the Philippines and Uganda.</p>
+        <div class="hero-actions">
+          <a class="btn-primary">♡ Donate Now — From $7.99/mo</a>
+          <a class="btn-ghost">▶ Watch Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hero-stat-num">$45,624</div><div class="hero-stat-label">Raised to date</div></div>
+          <div><div class="hero-stat-num">157+</div><div class="hero-stat-label">Active volunteers</div></div>
+          <div><div class="hero-stat-num">6</div><div class="hero-stat-label">Active programs</div></div>
+          <div><div class="hero-stat-num">2</div><div class="hero-stat-label">Countries served</div></div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-placeholder">🌿</div>
+        <div class="hero-photo-label">Field photography — replace with actual image</div>
+      </div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker">
+      <span class="ticker-label">Live Updates</span>
+      <div class="ticker-items">
+        <span class="ticker-item">🍽️ 2,400 meals delivered this month</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">💧 Water well #7 completed in Cebu</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">📚 18 children enrolled in education program</span>
+        <span class="ticker-sep">·</span>
+        <span class="ticker-item">🏥 Medical mission scheduled — Leyte, April 2025</span>
+      </div>
+    </div>
+
+    <!-- Impact Bar -->
+    <div class="impact-bar">
+      <div class="impact-bar-grid">
+        <div class="impact-item"><div class="impact-num">2,400+</div><div class="impact-label">Meals served this month</div></div>
+        <div class="impact-item"><div class="impact-num">100+</div><div class="impact-label">Charitable donors</div></div>
+        <div class="impact-item"><div class="impact-num">7</div><div class="impact-label">Water wells completed</div></div>
+        <div class="impact-item"><div class="impact-num">157</div><div class="impact-label">Active volunteers</div></div>
+      </div>
+    </div>
+
+    <!-- Programs Section -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div style="max-width:600px; margin-bottom:48px;">
+          <div class="section-label">Our Programs</div>
+          <h2 class="section-title">Six Ways Your Gift<br>Changes Lives</h2>
+          <p class="section-sub">From feeding hungry children to rescuing trafficking victims — every program is grounded in faith and measured by real-world impact.</p>
+        </div>
+        <div class="programs-grid">
+          <div class="program-card" style="--accent:#E9A73E; --icon-bg:#FEF3E2;">
+            <div class="prog-icon">🍽️</div>
+            <div class="prog-title">Child Hunger Relief</div>
+            <div class="prog-desc">$7.99/month feeds one child for 30 days. Join 100+ donors already feeding Filipino children every single day.</div>
+            <div class="prog-link">Feed a child →</div>
+          </div>
+          <div class="program-card" style="--accent:#40916C; --icon-bg:#D8F3DC;">
+            <div class="prog-icon">🌊</div>
+            <div class="prog-title">Disaster Relief</div>
+            <div class="prog-desc">Rapid response to typhoons, earthquakes, and floods. Supplies reach families within 48 hours of a disaster declaration.</div>
+            <div class="prog-link">Support relief →</div>
+          </div>
+          <div class="program-card" style="--accent:#3B8BDB; --icon-bg:#E6F1FB;">
+            <div class="prog-icon">💧</div>
+            <div class="prog-title">Clean Water Wells</div>
+            <div class="prog-desc">One well serves a whole village for 25+ years. We've completed 7 wells — help us reach 10 by end of year.</div>
+            <div class="prog-link">Fund a well →</div>
+          </div>
+          <div class="program-card" style="--accent:#C065A0; --icon-bg:#F8E8F2;">
+            <div class="prog-icon">🛡️</div>
+            <div class="prog-title">Anti-Trafficking</div>
+            <div class="prog-desc">Partnering with local Philippine rescue organizations to identify, shelter, and restore trafficking survivors.</div>
+            <div class="prog-link">Support rescue →</div>
+          </div>
+          <div class="program-card" style="--accent:#E57C26; --icon-bg:#FEF0E6;">
+            <div class="prog-icon">📚</div>
+            <div class="prog-title">Education Sponsorship</div>
+            <div class="prog-desc">Sponsor a child's school year, supplies, and uniform. Education breaks the generational cycle of poverty.</div>
+            <div class="prog-link">Sponsor a child →</div>
+          </div>
+          <div class="program-card" style="--accent:#E55A5A; --icon-bg:#FDECEA;">
+            <div class="prog-icon">🏥</div>
+            <div class="prog-title">Medical Missions</div>
+            <div class="prog-desc">Quarterly free clinics providing checkups, medicine, and surgery referrals to remote island communities.</div>
+            <div class="prog-link">Fund a mission →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Story -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="story-grid">
+          <div class="story-img">
+            <div class="story-img-icon">👦</div>
+            <div class="story-img-caption">Marco's story, Cebu — replace with field photo</div>
+          </div>
+          <div>
+            <div class="section-label">Story of Impact</div>
+            <h2 class="section-title">From Malnourished to<br>Thriving in 6 Months</h2>
+            <p style="font-size:15px;color:var(--text-body);line-height:1.75;">When Marco first came to our feeding program, he hadn't eaten a full meal in two days. His mother was a single parent working irregular construction jobs. Six months of consistent nutrition made a visible difference.</p>
+            <blockquote class="story-quote">"When Marco came to us, he hadn't eaten a full meal in two days. Today, he's attending school every day, gaining weight, and wants to be a teacher."</blockquote>
+            <div class="story-attr">— <strong>Pastor Esther Adajar</strong>, JDGM Philippines Coordinator</div>
+            <div style="display:flex;gap:14px;margin-top:32px;align-items:center;">
+              <a class="btn-primary">♡ Give $7.99 — Feed a Child</a>
+              <a style="font-size:14px;color:var(--brand-bright);font-weight:600;">Read more stories →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="section section-dark">
+      <div class="donation-two-col">
+        <div>
+          <div class="section-label section-label-light">Give Today</div>
+          <h2 class="section-title section-title-white">Your Gift,<br>Real Impact</h2>
+          <p class="section-sub section-sub-light">Every dollar goes directly to field operations. Pastor Johnny Davis personally oversees all fund distribution in the Philippines and Uganda.</p>
+          <div class="trust-list">
+            <div class="trust-row"><div class="trust-icon">🔒</div><div class="trust-text">Secured by Stripe — 256-bit encryption</div></div>
+            <div class="trust-row"><div class="trust-icon">📜</div><div class="trust-text">Registered 501(c)(3) nonprofit organization</div></div>
+            <div class="trust-row"><div class="trust-icon">🧾</div><div class="trust-text">Tax-deductible receipts sent automatically</div></div>
+            <div class="trust-row"><div class="trust-icon">♻️</div><div class="trust-text">Cancel recurring giving anytime, instantly</div></div>
+          </div>
+        </div>
+        <div class="donation-widget">
+          <div class="dtabs">
+            <button class="dtab active">Give Monthly</button>
+            <button class="dtab">Give Once</button>
+          </div>
+          <div class="amounts-grid">
+            <button class="amount-btn"><span class="amount-price">$7.99</span><span class="amount-impact">Feeds 1 child / mo</span></button>
+            <button class="amount-btn selected"><span class="amount-price">$29.99</span><span class="amount-impact">Feeds a family</span></button>
+            <button class="amount-btn"><span class="amount-price">$99</span><span class="amount-impact">Village medicine</span></button>
+          </div>
+          <input class="custom-amount" placeholder="Enter custom amount ($)" />
+          <select class="campaign-select">
+            <option>Designate to: Feed a Child</option>
+            <option>Disaster Relief</option>
+            <option>Clean Water Wells</option>
+            <option>Where most needed</option>
+          </select>
+          <button class="donate-big-btn">♡ Give $29.99 / Month</button>
+          <div class="secure-note">🔒 Encrypted · Secure · Cancel anytime</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div style="max-width:500px;margin-bottom:48px;">
+          <div class="section-label">Testimonials</div>
+          <h2 class="section-title">Hear From Our Community</h2>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"I've been giving $7.99 a month for two years. Getting the field updates by email makes it real — I know exactly where my money goes every single month."</p>
+            <div class="testi-author">
+              <div class="avatar" style="width:40px;height:40px;font-size:13px;">AW</div>
+              <div><div class="testi-name">Angela W.</div><div class="testi-role">Monthly donor since 2022</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"After volunteering in Cebu with Pastor Johnny's team, I came back a changed person. The work they do is legitimate, deeply needed, and genuinely Spirit-led."</p>
+            <div class="testi-author">
+              <div class="avatar" style="width:40px;height:40px;font-size:13px;">MR</div>
+              <div><div class="testi-name">Marcus R.</div><div class="testi-role">Mission trip volunteer, 2023</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Our church has partnered with JDGM for 18 months. The transparency, the real stories, the outcomes — this is a ministry we trust with our missions giving."</p>
+            <div class="testi-author">
+              <div class="avatar" style="width:40px;height:40px;font-size:13px;">PJ</div>
+              <div><div class="testi-name">Pastor James O.</div><div class="testi-role">Church partner, Atlanta GA</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Bar -->
+    <div class="cta-bar">
+      <div class="cta-bar-left">
+        <div class="cta-heading">Ready to Make a Difference?</div>
+        <p>Join 100+ donors already changing lives across the Philippines and Uganda.</p>
+      </div>
+      <div class="cta-bar-right">
+        <a class="btn-dark">♡ Donate Now</a>
+        <a class="btn-outline">Become a Volunteer</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#111;">✦</div>
+            <div style="color:#fff;font-size:13px;font-weight:500;line-height:1.3;">Johnny Davis<br>Global Missions</div>
+          </div>
+          <p class="footer-tagline">Serving the vulnerable in the Philippines and Uganda through hunger relief, clean water, education, and rescue programs since 2022.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Our Work</div>
+          <div class="footer-links">
+            <a class="footer-link">Child Hunger Relief</a>
+            <a class="footer-link">Disaster Relief</a>
+            <a class="footer-link">Clean Water Wells</a>
+            <a class="footer-link">Anti-Trafficking</a>
+            <a class="footer-link">Education</a>
+            <a class="footer-link">Medical Missions</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Get Involved</div>
+          <div class="footer-links">
+            <a class="footer-link">Donate Monthly</a>
+            <a class="footer-link">Compassion Circle</a>
+            <a class="footer-link">Volunteer Apply</a>
+            <a class="footer-link">Mission Trips</a>
+            <a class="footer-link">Church Partnership</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Organization</div>
+          <div class="footer-links">
+            <a class="footer-link">About Us</a>
+            <a class="footer-link">Blog &amp; Stories</a>
+            <a class="footer-link">Transparency</a>
+            <a class="footer-link">Annual Report</a>
+            <a class="footer-link">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 Johnny Davis Global Missions · 501(c)(3) Non-Profit · Suwanee, GA 30024</span>
+        <div class="socials">
+          <a class="social-btn">Fb</a>
+          <a class="social-btn">IG</a>
+          <a class="social-btn">YT</a>
+          <a class="social-btn">Li</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ============================================================ -->
 <!-- FRAME 2: DONATION PAGE                                        -->
 <!-- ============================================================ -->
-<div class="jdgm-real" id="donate-page-frame">
+<div>
   <div class="frame-label">Frame 02 — Donation Page · High-Converting (1440px)</div>
   <div class="frame">
     <nav class="navbar">
-      <div class="nav-logo"><img src="https://d14tal8bchn59o.cloudfront.net/wXWLUTzDpSGIT3USnLCfVD5bygtfOXZJDbYPeTlo2vo/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/104216/photos/22629528/C3F69010-FC63-4CCA-9453-99A93EFB8AE2_original.png" alt="Johnny Davis Global Missions" style="height:52px;width:auto;display:block;"/></div>
-      <div class="nav-links"><a class="nav-link">Home</a><a class="nav-link">Who We Are</a><a class="nav-link">What We Do</a><a class="nav-link">Make a Difference</a><a class="nav-link">Contact Us</a><a class="nav-cta">♡ Donate Now</a></div>
+      <div class="nav-logo"><div class="logo-mark">✦</div><div class="logo-text">Johnny Davis<br>Global Missions</div></div>
+      <div class="nav-links"><a class="nav-link">Our Work</a><a class="nav-link">About</a><a class="nav-link">Volunteer</a><a class="nav-cta">♡ Donate Now</a></div>
     </nav>
 
     <!-- Page Hero -->
-    <div style="background:linear-gradient(rgba(18,12,6,0.68),rgba(18,12,6,0.68)),linear-gradient(135deg,#3d2b1a 0%,#1a2535 100%);padding:52px 64px;position:relative;overflow:hidden;">
+    <div style="background:var(--brand-deep);padding:52px 64px;position:relative;overflow:hidden;">
       <div style="position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:rgba(116,198,157,0.07);"></div>
       <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1;">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px;">
@@ -1003,44 +1229,13 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 
         <!-- Step 4 -->
         <div class="donate-step-title"><div class="step-num">4</div>Payment Details</div>
-
-        <!-- Payment method tabs -->
-        <div class="pay-method-selector">
-          <button class="pay-tab active" id="pay-tab-card">
-            <span style="font-size:17px;">💳</span> Credit / Debit Card
-          </button>
-          <button class="pay-tab" id="pay-tab-gcash">
-            <span style="width:22px;height:22px;border-radius:6px;background:#007DFF;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;flex-shrink:0;">G</span> GCash
-          </button>
-        </div>
-
-        <!-- Card panel -->
-        <div id="pay-panel-card" class="payment-box">
+        <div class="payment-box">
           <input class="card-field" placeholder="Card number — •••• •••• •••• ••••"/>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             <input class="card-field" placeholder="MM / YY" style="margin-bottom:0;"/>
             <input class="card-field" placeholder="CVC" style="margin-bottom:0;"/>
           </div>
           <div class="stripe-note">🔒 Payments processed by Stripe · PCI compliant · We never store card data</div>
-        </div>
-
-        <!-- GCash panel -->
-        <div id="pay-panel-gcash" style="display:none;" class="gcash-panel">
-          <div class="gcash-header">
-            <div class="gcash-logo-badge">G</div>
-            <div>
-              <div class="gcash-label">GCash Mobile Payment</div>
-              <div class="gcash-sublabel">Fast, cashless giving via your GCash wallet · Philippines</div>
-            </div>
-          </div>
-          <label class="form-label">GCash-registered mobile number</label>
-          <input class="form-input" id="gcash-number" placeholder="+63 9XX XXX XXXX" type="tel" style="margin-bottom:0;"/>
-          <div class="gcash-steps">
-            <div class="gcash-step"><div class="gcash-step-num">1</div>Enter your GCash number above and tap the button below</div>
-            <div class="gcash-step"><div class="gcash-step-num">2</div>Open your GCash app — you'll receive a payment request notification instantly</div>
-            <div class="gcash-step"><div class="gcash-step-num">3</div>Confirm the amount with your GCash MPIN to complete your gift</div>
-          </div>
-          <div class="gcash-note">📱 Your tax-deductible receipt will be sent to your GCash-registered email and your JDGM donor account.</div>
         </div>
 
         <button class="btn-green" style="margin-top:28px;font-size:16px;padding:18px 28px;">♡ Complete Gift — $29.99 / Month</button>
@@ -1050,7 +1245,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
       <!-- RIGHT: Sidebar -->
       <div>
         <div class="card" style="margin-bottom:18px;">
-          <div class="sidebar-heading" id="donate-impact-heading">Your $29.99/mo Impact</div>
+          <div class="sidebar-heading">Your $29.99/mo Impact</div>
           <div class="impact-rows">
             <div class="impact-row"><div class="impact-emoji">🍽️</div><div class="impact-copy"><strong>$7.99/mo</strong> feeds one child nutritious daily meals for an entire month</div></div>
             <div class="impact-row"><div class="impact-emoji">👨‍👩‍👧‍👦</div><div class="impact-copy"><strong>$29.99/mo</strong> feeds a family of four every single day of the month</div></div>
@@ -1061,10 +1256,10 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 
         <div class="card" style="margin-bottom:18px;">
           <div class="sidebar-heading">Order Summary</div>
-          <div class="order-line"><span id="donate-order-campaign">Feed Filipino Children</span><span id="donate-order-type">Monthly</span></div>
-          <div class="order-line"><span>Donation amount</span><span style="font-weight:600;" id="donate-order-amount">$29.99</span></div>
+          <div class="order-line"><span>Feed Filipino Children</span><span>Monthly</span></div>
+          <div class="order-line"><span>Donation amount</span><span style="font-weight:600;">$29.99</span></div>
           <div class="order-line"><span>Processing fee (waived)</span><span style="color:var(--brand-bright);">$0.00</span></div>
-          <div class="order-total"><span id="donate-total-label">Monthly total</span><span class="order-total-amount" id="donate-order-total">$29.99</span></div>
+          <div class="order-total"><span>Monthly total</span><span class="order-total-amount">$29.99</span></div>
         </div>
 
         <div class="card" style="margin-bottom:18px;">
@@ -1081,7 +1276,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 
         <div style="background:var(--brand-pale);border-radius:var(--r-lg);padding:20px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-            <img src="https://d14tal8bchn59o.cloudfront.net/RhGkp7h3Fm5bBymv78FLEpsQSnC3q7PFpecGpojrkak/w:2000/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/104216/photos/23052432/JDM_Logo_6_original.jpg" alt="Pastor Johnny Davis" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;"/>
+            <div class="avatar" style="width:44px;height:44px;font-size:22px;background:var(--brand-bright);">🙏</div>
             <div><div style="font-size:14px;font-weight:700;color:var(--brand-deep);">A note from Pastor Johnny</div><div style="font-size:12px;color:var(--brand-mid);">Founder &amp; Executive Director</div></div>
           </div>
           <p style="font-size:13px;color:var(--brand-mid);line-height:1.7;font-style:italic;">"Every dollar you give is a statement of faith that a child's life has value. We are honored to be your hands in the Philippines and Uganda."</p>
@@ -1091,120 +1286,85 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
   </div>
 </div>
 
+<!-- ============================================================ -->
+<!-- FRAME 3: ABOUT US                                             -->
+<!-- ============================================================ -->
+<div>
+  <div class="frame-label">Frame 03 — About Us (1440px)</div>
+  <div class="frame">
+    <nav class="navbar"><div class="nav-logo"><div class="logo-mark">✦</div><div class="logo-text">Johnny Davis<br>Global Missions</div></div><div class="nav-links"><a class="nav-link active">About</a><a class="nav-link">Our Work</a><a class="nav-link">Blog</a><a class="nav-cta">♡ Donate Now</a></div></nav>
+    <div style="background:var(--brand-deep);padding:60px 64px;"><div style="max-width:1100px;margin:0 auto;"><h1 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#fff;margin-bottom:14px;">A Mission Born From Faith,<br>Built on Real Compassion</h1><p style="font-size:17px;color:rgba(255,255,255,0.65);max-width:560px;line-height:1.65;font-weight:300;">Founded in Suwanee, Georgia in 2022, JDGM is a boots-on-the-ground humanitarian organization operating in the Philippines and Uganda.</p></div></div>
 
-<script>
-(function() {
-  const frame = document.getElementById('donate-page-frame');
-  if (!frame) return;
+    <!-- Story -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="about-2col">
+          <div>
+            <div class="section-label">Our Story</div>
+            <h2 class="section-title" style="font-size:32px;">From a Single Mission Trip to a Global Movement</h2>
+            <p style="font-size:15px;color:var(--text-body);line-height:1.8;margin-top:16px;">In 2022, Pastor Johnny Davis traveled to Cebu, Philippines and witnessed firsthand the devastating effects of child hunger and poverty. He returned to Georgia with a mission: build a structured, transparent organization that could provide sustained relief — not just one-time charity.</p>
+            <p style="font-size:15px;color:var(--text-body);line-height:1.8;margin-top:14px;">Today, JDGM has 157 active volunteers, has raised $45,624 in donations, and operates six distinct programs across the Philippines and Uganda with full financial transparency.</p>
+            <div style="display:flex;gap:14px;margin-top:28px;"><a class="btn-primary">View Our Programs</a><a class="btn-outline">Transparency Report</a></div>
+          </div>
+          <div class="about-img">⛪</div>
+        </div>
 
-  const campaignOpts  = frame.querySelectorAll('.campaign-opt');
-  const amountBtns    = frame.querySelectorAll('.amount-btn');
-  const dtabs         = frame.querySelectorAll('.dtab');
-  const customInput   = frame.querySelector('.custom-amount');
-  const ctaBtn        = frame.querySelector('.btn-green');
+        <!-- Mission Cards -->
+        <div class="mission-cards">
+          <div class="mission-card"><div class="mission-card-title">Our Mission</div><div class="mission-card-text">To embody the compassion of Christ by meeting the physical and spiritual needs of the vulnerable — feeding the hungry, healing the sick, freeing the captive.</div></div>
+          <div class="mission-card"><div class="mission-card-title">Our Vision</div><div class="mission-card-text">A world where every child has food, clean water, and access to education — and where faith organizations lead in accountability and impact measurement.</div></div>
+          <div class="mission-card"><div class="mission-card-title">Our Values</div><div class="mission-card-text">Transparency · Accountability · Faith-driven action · Dignity for every person served · Long-term partnership over one-time charity.</div></div>
+        </div>
+      </div>
+    </section>
 
-  const impactHeading   = document.getElementById('donate-impact-heading');
-  const orderCampaign   = document.getElementById('donate-order-campaign');
-  const orderType       = document.getElementById('donate-order-type');
-  const orderAmount     = document.getElementById('donate-order-amount');
-  const totalLabel      = document.getElementById('donate-total-label');
-  const orderTotal      = document.getElementById('donate-order-total');
-
-  let selectedAmt      = 29.99;
-  let isMonthly        = true;
-  let selectedCampaign = 'Feed Filipino Children';
-
-  function fmt(n) {
-    return '$' + (Number.isInteger(n) ? n : n.toFixed(2));
-  }
-
-  function sync() {
-    const amtStr  = fmt(selectedAmt);
-    const typeStr = isMonthly ? 'Monthly' : 'One-time';
-
-    if (ctaBtn)        ctaBtn.textContent  = '♡ Complete Gift — ' + amtStr + (isMonthly ? ' / Month' : ' One-time');
-    if (impactHeading) impactHeading.textContent = 'Your ' + amtStr + (isMonthly ? '/mo' : '') + ' Impact';
-    if (orderCampaign) orderCampaign.textContent = selectedCampaign;
-    if (orderType)     orderType.textContent     = typeStr;
-    if (orderAmount)   orderAmount.textContent   = amtStr;
-    if (totalLabel)    totalLabel.textContent    = typeStr + ' total';
-    if (orderTotal)    orderTotal.textContent    = amtStr;
-  }
-
-  /* Campaign selection */
-  campaignOpts.forEach(opt => {
-    opt.addEventListener('click', function() {
-      campaignOpts.forEach(o => {
-        o.classList.remove('active');
-        const r = o.querySelector('.camp-radio');
-        if (r) { r.classList.remove('on'); r.innerHTML = ''; }
-      });
-      this.classList.add('active');
-      const radio = this.querySelector('.camp-radio');
-      if (radio) radio.classList.add('on');
-      selectedCampaign = this.querySelector('.camp-title')?.textContent.trim() || selectedCampaign;
-      sync();
-    });
-  });
-
-  /* Amount selection */
-  amountBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      amountBtns.forEach(b => b.classList.remove('selected'));
-      this.classList.add('selected');
-      customInput.value = '';
-      selectedAmt = parseFloat(this.querySelector('.amount-price').textContent.replace('$', ''));
-      sync();
-    });
-  });
-
-  /* Custom amount */
-  customInput.addEventListener('input', function() {
-    const val = parseFloat(this.value);
-    if (!isNaN(val) && val > 0) {
-      amountBtns.forEach(b => b.classList.remove('selected'));
-      selectedAmt = val;
-      sync();
-    }
-  });
-
-  /* Monthly / One-time tabs */
-  dtabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      dtabs.forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-      isMonthly = this.textContent.includes('Monthly');
-      sync();
-    });
-  });
-
-  /* Payment method tabs */
-  const payTabCard   = document.getElementById('pay-tab-card');
-  const payTabGcash  = document.getElementById('pay-tab-gcash');
-  const panelCard    = document.getElementById('pay-panel-card');
-  const panelGcash   = document.getElementById('pay-panel-gcash');
-
-  function switchPayMethod(method) {
-    const isCard = method === 'card';
-    payTabCard.classList.toggle('active', isCard);
-    payTabGcash.classList.toggle('active', !isCard);
-    panelCard.style.display  = isCard ? '' : 'none';
-    panelGcash.style.display = isCard ? 'none' : '';
-  }
-
-  payTabCard.addEventListener('click',  () => switchPayMethod('card'));
-  payTabGcash.addEventListener('click', () => switchPayMethod('gcash'));
-})();
-</script>
+    <!-- Timeline -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+          <div>
+            <div class="section-label">Our Journey</div>
+            <h2 class="section-title" style="font-size:30px;margin-bottom:36px;">How We Got Here</h2>
+            <div class="timeline-wrap">
+              <div class="timeline-line"></div>
+              <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2022</div><div class="tl-title">JDGM Founded</div><div class="tl-text">Pastor Johnny registers JDGM as a 501(c)(3). First mission to Cebu, Philippines. 12 volunteers, 400 meals served.</div></div>
+              <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023</div><div class="tl-title">Programs Expand</div><div class="tl-text">Clean Water program launches. Wells #1 and #2 complete in Cebu. Anti-trafficking partnership established. Donor count reaches 50+.</div></div>
+              <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><div class="tl-title">Uganda Work Begins</div><div class="tl-text">First medical mission to Uganda. Education sponsorship launches. $45,624 raised. 157 active volunteers. 100+ charitable donors.</div></div>
+              <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-title">Rebuilding for Impact</div><div class="tl-text">New platform launch. "Compassion Circle" monthly giving program. Google for Nonprofits grant application in progress.</div></div>
+            </div>
+          </div>
+          <div>
+            <div class="section-label">Our Team</div>
+            <h2 class="section-title" style="font-size:30px;margin-bottom:32px;">The People Behind the Work</h2>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div class="card card-sm" style="display:flex;gap:16px;align-items:flex-start;">
+                <div class="avatar" style="width:52px;height:52px;font-size:24px;">👨‍💼</div>
+                <div><div style="font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:3px;">Pastor Johnny Davis</div><div style="font-size:12px;color:var(--brand-bright);font-weight:600;margin-bottom:8px;">Founder &amp; Executive Director</div><div style="font-size:13px;color:var(--text-muted);line-height:1.65;">Based in Suwanee, GA. Oversees all operations, fund disbursement, strategic direction, and field visits.</div></div>
+              </div>
+              <div class="card card-sm" style="display:flex;gap:16px;align-items:flex-start;">
+                <div class="avatar" style="width:52px;height:52px;font-size:24px;">👩‍💼</div>
+                <div><div style="font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:3px;">Pastor Esther Adajar</div><div style="font-size:12px;color:var(--brand-bright);font-weight:600;margin-bottom:8px;">Philippines Field Coordinator</div><div style="font-size:13px;color:var(--text-muted);line-height:1.65;">Based in Cebu. Manages day-to-day field operations, hunger program distribution, and community partnerships.</div></div>
+              </div>
+              <div class="card card-sm" style="display:flex;gap:16px;align-items:flex-start;">
+                <div class="avatar" style="width:52px;height:52px;font-size:24px;">🤝</div>
+                <div><div style="font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:3px;">Aylen &amp; Yvonne</div><div style="font-size:12px;color:var(--brand-bright);font-weight:600;margin-bottom:8px;">Field Volunteers, Philippines</div><div style="font-size:13px;color:var(--text-muted);line-height:1.65;">Long-term on-the-ground volunteers coordinating meal distribution, children's welfare, and community liaison.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
 
 <!-- ============================================================ -->
 <!-- FRAME 4: BLOG / NEWS                                          -->
 <!-- ============================================================ -->
-<div class="jdgm-real">
+<div>
   <div class="frame-label">Frame 04 — Blog / News (1440px)</div>
   <div class="frame">
-    <nav class="navbar"><div class="nav-logo"><img src="https://d14tal8bchn59o.cloudfront.net/wXWLUTzDpSGIT3USnLCfVD5bygtfOXZJDbYPeTlo2vo/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/104216/photos/22629528/C3F69010-FC63-4CCA-9453-99A93EFB8AE2_original.png" alt="Johnny Davis Global Missions" style="height:52px;width:auto;display:block;"/></div><div class="nav-links"><a class="nav-link">Our Work</a><a class="nav-link">About</a><a class="nav-link active">Blog</a><a class="nav-cta">♡ Donate Now</a></div></nav>
-    <div style="background:linear-gradient(rgba(18,12,6,0.68),rgba(18,12,6,0.68)),linear-gradient(135deg,#3d2b1a 0%,#1a2535 100%);padding:56px 64px;"><div style="max-width:1100px;margin:0 auto;"><h1 style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:12px;">Stories, Updates &amp; Mission Reports</h1><p style="font-size:16px;color:rgba(255,255,255,0.65);max-width:520px;line-height:1.65;font-weight:300;">Monthly field updates from the Philippines and Uganda. Real stories. Real impact. Straight from the people doing the work.</p></div></div>
+    <nav class="navbar"><div class="nav-logo"><div class="logo-mark">✦</div><div class="logo-text">Johnny Davis<br>Global Missions</div></div><div class="nav-links"><a class="nav-link">Our Work</a><a class="nav-link">About</a><a class="nav-link active">Blog</a><a class="nav-cta">♡ Donate Now</a></div></nav>
+    <div style="background:var(--brand-deep);padding:56px 64px;"><div style="max-width:1100px;margin:0 auto;"><h1 style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:12px;">Stories, Updates &amp; Mission Reports</h1><p style="font-size:16px;color:rgba(255,255,255,0.65);max-width:520px;line-height:1.65;font-weight:300;">Monthly field updates from the Philippines and Uganda. Real stories. Real impact. Straight from the people doing the work.</p></div></div>
 
     <section class="section">
       <div class="section-inner">
@@ -1219,7 +1379,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 
         <div class="blog-grid">
           <div class="blog-card">
-            <div class="blog-img-area" style="background-image:url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=400&fit=crop&auto=format');"></div>
+            <div class="blog-img-area" style="background:linear-gradient(135deg,#D8F3DC,#74C69D);">🌾</div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge badge-green">Field Report</span><span class="blog-date">March 15, 2025</span></div>
               <div class="blog-title">2,400 Meals Served in February — Our Biggest Month Yet</div>
@@ -1228,7 +1388,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
             </div>
           </div>
           <div class="blog-card">
-            <div class="blog-img-area" style="background-image:url('https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?w=600&h=400&fit=crop&auto=format');"></div>
+            <div class="blog-img-area" style="background:linear-gradient(135deg,#E6F1FB,#85B7EB);">💧</div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge" style="background:#DBEAFE;color:#1D4ED8;">Uganda</span><span class="blog-date">February 28, 2025</span></div>
               <div class="blog-title">Well #7 is Complete — 200 Families Now Have Clean Water</div>
@@ -1237,7 +1397,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
             </div>
           </div>
           <div class="blog-card">
-            <div class="blog-img-area" style="background-image:url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&h=400&fit=crop&auto=format');"></div>
+            <div class="blog-img-area" style="background:linear-gradient(135deg,#FEF3E2,#E9A73E);">👦</div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge badge-gold">Impact Story</span><span class="blog-date">February 10, 2025</span></div>
               <div class="blog-title">Marco's Story: From Malnourished to Thriving in 6 Months</div>
@@ -1246,7 +1406,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
             </div>
           </div>
           <div class="blog-card">
-            <div class="blog-img-area" style="background-image:url('https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=400&fit=crop&auto=format');"></div>
+            <div class="blog-img-area" style="background:linear-gradient(135deg,#FBEAF0,#ED93B1);">🏥</div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge" style="background:#FBEAF0;color:#993556;">Medical</span><span class="blog-date">January 22, 2025</span></div>
               <div class="blog-title">Medical Mission to Leyte: 340 Patients in 3 Days</div>
@@ -1255,7 +1415,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
             </div>
           </div>
           <div class="blog-card">
-            <div class="blog-img-area" style="background-image:url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&h=400&fit=crop&auto=format');"></div>
+            <div class="blog-img-area" style="background:linear-gradient(135deg,#F8E8F2,#C065A0);">🛡️</div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge" style="background:#F8E8F2;color:#C065A0;">Anti-Trafficking</span><span class="blog-date">January 5, 2025</span></div>
               <div class="blog-title">Partnership Expands: 3 New Rescue Organizations Join JDGM Network</div>
@@ -1264,7 +1424,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
             </div>
           </div>
           <div class="blog-card">
-            <div class="blog-img-area" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop&auto=format');"></div>
+            <div class="blog-img-area" style="background:linear-gradient(135deg,#FEF0E6,#F4A261);">📚</div>
             <div class="blog-body">
               <div class="blog-meta"><span class="badge badge-gold">Education</span><span class="blog-date">December 18, 2024</span></div>
               <div class="blog-title">18 Children Enrolled in Education Sponsorship for 2025</div>
@@ -1293,11 +1453,11 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 <!-- ============================================================ -->
 <!-- FRAME 5: CONTACT                                              -->
 <!-- ============================================================ -->
-<div class="jdgm-real">
+<div>
   <div class="frame-label">Frame 05 — Contact (1440px)</div>
   <div class="frame">
-    <nav class="navbar"><div class="nav-logo"><img src="https://d14tal8bchn59o.cloudfront.net/wXWLUTzDpSGIT3USnLCfVD5bygtfOXZJDbYPeTlo2vo/w:1920/plain/https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/104216/photos/22629528/C3F69010-FC63-4CCA-9453-99A93EFB8AE2_original.png" alt="Johnny Davis Global Missions" style="height:52px;width:auto;display:block;"/></div><div class="nav-links"><a class="nav-link">Our Work</a><a class="nav-link">About</a><a class="nav-link">Blog</a><a class="nav-cta">♡ Donate Now</a></div></nav>
-    <div style="background:linear-gradient(rgba(18,12,6,0.68),rgba(18,12,6,0.68)),linear-gradient(135deg,#3d2b1a 0%,#1a2535 100%);padding:56px 64px;"><div style="max-width:1100px;margin:0 auto;"><h1 style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:12px;">Get in Touch</h1><p style="font-size:16px;color:rgba(255,255,255,0.65);max-width:480px;line-height:1.65;font-weight:300;">Questions about donating, volunteering, or church partnerships? We respond to every message within 48 hours.</p></div></div>
+    <nav class="navbar"><div class="nav-logo"><div class="logo-mark">✦</div><div class="logo-text">Johnny Davis<br>Global Missions</div></div><div class="nav-links"><a class="nav-link">Our Work</a><a class="nav-link">About</a><a class="nav-link">Blog</a><a class="nav-cta">♡ Donate Now</a></div></nav>
+    <div style="background:var(--brand-deep);padding:56px 64px;"><div style="max-width:1100px;margin:0 auto;"><h1 style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:12px;">Get in Touch</h1><p style="font-size:16px;color:rgba(255,255,255,0.65);max-width:480px;line-height:1.65;font-weight:300;">Questions about donating, volunteering, or church partnerships? We respond to every message within 48 hours.</p></div></div>
 
     <section class="section">
       <div class="section-inner">
@@ -1406,98 +1566,6 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 .seo-warn { color:#D97706; }
 .seo-fail { color:#DC2626; }
 
-/* =============================================
-   ENHANCED ADMIN SIDEBAR — INTERACTIVE
-   ============================================= */
-.admin-nav-item {
-  position: relative;
-  transition: background 0.18s ease, border-left-color 0.18s ease, transform 0.12s ease;
-  cursor: pointer;
-}
-.admin-nav-item:hover { background: #2a2a2e; transform: translateX(2px); }
-.admin-nav-item:hover .admin-nav-label { color: #fff; }
-.admin-nav-item:hover .admin-nav-icon { transform: scale(1.2) rotate(-4deg); }
-.admin-nav-icon { display: inline-block; transition: transform 0.18s cubic-bezier(.34,1.56,.64,1); }
-.admin-nav-item.active .admin-nav-icon { filter: drop-shadow(0 0 6px rgba(64,145,108,0.8)); }
-.admin-nav-item:active { transform: translateX(4px) scale(0.97); transition: transform 0.08s ease; }
-
-/* Tooltip */
-.nav-tooltip {
-  position: fixed;
-  left: 0;
-  top: 0;
-  transform: translateY(-50%) scale(0.9);
-  background: #111113;
-  border: 1px solid rgba(64,145,108,0.4);
-  border-radius: 10px;
-  padding: 12px 16px;
-  min-width: 220px;
-  max-width: 270px;
-  z-index: 99999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(.34,1.56,.64,1);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(64,145,108,0.08);
-}
-.nav-tooltip.nav-tooltip-visible { opacity: 1; transform: translateY(-50%) scale(1); }
-.nav-tooltip::before {
-  content: '';
-  position: absolute;
-  left: -5px;
-  top: 50%;
-  width: 9px; height: 9px;
-  background: #111113;
-  border-left: 1px solid rgba(64,145,108,0.4);
-  border-bottom: 1px solid rgba(64,145,108,0.4);
-  transform: translateY(-50%) rotate(45deg);
-}
-.nav-tooltip-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
-.nav-tooltip-desc { font-size: 12px; color: rgba(255,255,255,0.52); line-height: 1.6; }
-.nav-tooltip-tag {
-  font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px;
-  background: rgba(64,145,108,0.2); color: #74C69D; margin-top: 8px; display: inline-block;
-}
-.nav-tooltip-badge {
-  font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px;
-  background: rgba(233,167,62,0.2); color: #E9A73E; margin-top: 8px; display: inline-block;
-}
-
-@keyframes activePulse {
-  0%,100% { box-shadow:inset 0 0 0 0 rgba(64,145,108,0); }
-  50%      { box-shadow:inset 3px 0 0 0 rgba(64,145,108,0.3); }
-}
-.admin-nav-item.active { animation: activePulse 2.8s ease-in-out infinite; }
-
-@keyframes frameHighlight {
-  0%   { box-shadow: 0 0 0 0 rgba(64,145,108,0); }
-  25%  { box-shadow: 0 0 0 4px rgba(64,145,108,0.6); }
-  100% { box-shadow: 0 0 0 0 rgba(64,145,108,0); }
-}
-.admin-frame-flash { animation: frameHighlight 1s ease-out forwards; }
-
-.nav-ripple {
-  position: absolute; border-radius: 50%;
-  background: rgba(64,145,108,0.3);
-  transform: scale(0);
-  animation: navRipple 0.55s linear;
-  pointer-events: none;
-}
-@keyframes navRipple { to { transform: scale(4); opacity: 0; } }
-
-#admin-nav-toast {
-  position: fixed; bottom: 28px; left: 50%;
-  transform: translateX(-50%) translateY(16px);
-  background: #18181B; border: 1px solid rgba(64,145,108,0.45);
-  color: #fff; padding: 11px 22px; border-radius: 10px;
-  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
-  z-index: 99999; opacity: 0;
-  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(.34,1.56,.64,1);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
-  pointer-events: none; white-space: nowrap;
-  display: flex; align-items: center; gap: 8px;
-}
-#admin-nav-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
 /* Impact counter editor */
 .counter-row { display:grid;grid-template-columns:1fr 120px 80px;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #F0F0F2; }
 .counter-label-cell { font-size:14px;font-weight:500;color:var(--text-dark); }
@@ -1559,49 +1627,13 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 .settings-row:last-child { border-bottom:none;padding-bottom:0; }
 .settings-key { font-size:13px;font-weight:500;color:var(--text-dark); }
 .settings-key small { display:block;font-size:11px;font-weight:400;color:var(--text-muted);margin-top:3px; }
-
-/* =============================================
-   EMAIL WELCOME SEQUENCE — Frame 16
-   ============================================= */
-.seq-overview { display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px; }
-.seq-stat { background:#fff;border:1px solid #E8E8EA;border-radius:var(--r-lg);padding:18px 20px; }
-.seq-stat-label { font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px; }
-.seq-stat-value { font-size:26px;font-weight:700;color:var(--text-dark);line-height:1; }
-.seq-stat-sub { font-size:12px;color:var(--text-muted);margin-top:5px; }
-.seq-toggle-bar { background:#fff;border:1px solid #E8E8EA;border-radius:var(--r-lg);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;margin-bottom:28px; }
-.seq-toggle-info { font-size:13px;font-weight:600;color:var(--text-dark); }
-.seq-toggle-info small { font-weight:400;color:var(--text-muted);margin-left:8px; }
-.seq-toggle { width:44px;height:24px;background:var(--brand-bright);border-radius:100px;position:relative;cursor:pointer;flex-shrink:0; }
-.seq-toggle::after { content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;right:3px;box-shadow:0 1px 4px rgba(0,0,0,0.2); }
-.seq-timeline { position:relative;padding-left:48px; }
-.seq-step { position:relative;margin-bottom:0; }
-.seq-step:last-child .seq-connector { display:none; }
-.seq-connector { position:absolute;left:-28px;top:52px;bottom:-32px;width:2px;background:linear-gradient(to bottom,#E8E8EA,#E8E8EA); }
-.seq-node { position:absolute;left:-40px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--brand-bright);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;z-index:1; }
-.seq-delay-row { display:flex;align-items:center;gap:10px;margin-bottom:10px; }
-.seq-delay-badge { font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;background:#F4F4F5;color:var(--text-muted);border:1px solid #E8E8EA; }
-.seq-delay-badge.immediate { background:#D8F3DC;color:#1A6640;border-color:#B7E4C7; }
-.seq-delay-line { flex:1;height:1px;background:#E8E8EA; }
-.seq-card { background:#fff;border:1px solid #E8E8EA;border-radius:var(--r-lg);padding:20px;margin-bottom:20px;transition:box-shadow 0.15s; }
-.seq-card:hover { box-shadow:0 4px 16px rgba(0,0,0,0.07); }
-.seq-card-top { display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px; }
-.seq-card-subject { font-size:14px;font-weight:600;color:var(--text-dark);line-height:1.4; }
-.seq-card-preview { font-size:12px;color:var(--text-muted);margin-top:3px;line-height:1.5; }
-.seq-type-badge { font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;white-space:nowrap;flex-shrink:0;margin-top:2px; }
-.seq-stats-row { display:flex;gap:20px;padding:12px 0;border-top:1px solid #F4F4F5;border-bottom:1px solid #F4F4F5;margin:12px 0; }
-.seq-stat-item { text-align:center; }
-.seq-stat-item-val { font-size:16px;font-weight:700;color:var(--text-dark); }
-.seq-stat-item-lbl { font-size:10px;color:var(--text-muted);margin-top:2px;text-transform:uppercase;letter-spacing:0.5px; }
-.seq-card-actions { display:flex;gap:8px;align-items:center; }
-.seq-add-step { border:2px dashed #D0D0D4;border-radius:var(--r-lg);padding:18px;text-align:center;color:var(--text-muted);font-size:13px;font-weight:600;cursor:pointer;background:#FAFAF8;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px; }
-.seq-add-step:hover { border-color:var(--brand-bright);color:var(--brand-bright);background:#F0FAF4; }
 </style>
 
 
 <!-- ============================================================ -->
 <!-- FRAME 6: ADMIN — DASHBOARD                                   -->
 <!-- ============================================================ -->
-<div id="admin-frame-dashboard">
+<div>
   <div class="frame-label">Frame 06 — Admin: Dashboard (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -1706,11 +1738,11 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
               <table class="admin-table">
                 <thead><tr><th>Donor</th><th>Campaign</th><th>Amount</th><th>Type</th><th>Date</th><th>Status</th><th></th></tr></thead>
                 <tbody>
-                  <tr><td><div style="font-weight:500;">Angela Wilson</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a7a8a1a3aaa786a3aba7afaae8a5a9ab">[email&#160;protected]</a></div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$7.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 29</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">Marcus Reid</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ff2b1edfaf6fbdffaf2fef6f3b1fcf0f2">[email&#160;protected]</a></div></td><td>Disaster Relief</td><td style="font-weight:700;">$50.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">Grace Tan</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ee9fcefedebceebe3efe7e2a0ede1e3">[email&#160;protected]</a></div></td><td>Uganda Water Wells</td><td style="font-weight:700;">$100.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">James Okafor</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1712161c1b120f3d1e15080f1e1553120f1a">[email&#160;protected]</a></div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$500.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 27</td><td><span class="status status-pending">Pending</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">Sandra Flores</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8af9ece6e5f8eff9caefe7ebe3e6a4e9e5e7">[email&#160;protected]</a></div></td><td>Education Sponsorship</td><td style="font-weight:700;">$29.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 27</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr><td><div style="font-weight:500;">Angela Wilson</div><div style="font-size:11px;color:var(--text-muted);">angela@email.com</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$7.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 29</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr><td><div style="font-weight:500;">Marcus Reid</div><div style="font-size:11px;color:var(--text-muted);">m.reid@email.com</div></td><td>Disaster Relief</td><td style="font-weight:700;">$50.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr><td><div style="font-weight:500;">Grace Tan</div><div style="font-size:11px;color:var(--text-muted);">grace@email.com</div></td><td>Uganda Water Wells</td><td style="font-weight:700;">$100.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr><td><div style="font-weight:500;">James Okafor</div><div style="font-size:11px;color:var(--text-muted);">jokafor@church.org</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$500.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 27</td><td><span class="status status-pending">Pending</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr><td><div style="font-weight:500;">Sandra Flores</div><div style="font-size:11px;color:var(--text-muted);">sflores@email.com</div></td><td>Education Sponsorship</td><td style="font-weight:700;">$29.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 27</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
                 </tbody>
               </table>
               <div class="pagination"><div class="pg-info">Showing 5 of 312</div><div class="pg-btns"><button class="pg-btn">‹</button><button class="pg-btn active">1</button><button class="pg-btn">2</button><button class="pg-btn">3</button><button class="pg-btn">›</button></div></div>
@@ -1760,7 +1792,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 <!-- ============================================================ -->
 <!-- FRAME 7: ADMIN — CAMPAIGNS LIST + CREATE                     -->
 <!-- ============================================================ -->
-<div id="admin-frame-campaigns">
+<div>
   <div class="frame-label">Frame 07 — Admin: Campaign Manager (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -1816,7 +1848,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
                 <div style="text-align:center;border-left:1px solid #E8E8EA;"><div style="font-size:16px;font-weight:700;color:var(--text-dark);">63</div><div style="font-size:10px;color:var(--text-muted);">Monthly</div></div>
                 <div style="text-align:center;border-left:1px solid #E8E8EA;"><div style="font-size:16px;font-weight:700;color:var(--text-dark);">Dec 31</div><div style="font-size:10px;color:var(--text-muted);">End date</div></div>
               </div>
-              <div style="display:flex;gap:8px;"><button class="tbl-btn tbl-btn-primary" style="flex:1;" onclick="navigateTo('admin-frame-edit-campaign','Edit Campaign — Feed Filipino Children')">Edit</button><button class="tbl-btn" style="flex:1;">View Page</button><button class="tbl-btn">⋯</button></div>
+              <div style="display:flex;gap:8px;"><button class="tbl-btn tbl-btn-primary" style="flex:1;">Edit</button><button class="tbl-btn" style="flex:1;">View Page</button><button class="tbl-btn">⋯</button></div>
             </div>
             <!-- Card 2 -->
             <div class="card" style="border-top:4px solid #3B8BDB;">
@@ -1886,7 +1918,7 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
 <!-- ============================================================ -->
 <!-- FRAME 8: ADMIN — CAMPAIGN EDIT FORM (detailed)              -->
 <!-- ============================================================ -->
-<div id="admin-frame-edit-campaign">
+<div>
   <div class="frame-label">Frame 08 — Admin: Edit Campaign — Feed Filipino Children (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2026,7 +2058,7 @@ Join 87 donors already feeding children every single day. Every donation is trac
 <!-- ============================================================ -->
 <!-- FRAME 9: ADMIN — DONATIONS TABLE (detailed)                  -->
 <!-- ============================================================ -->
-<div id="admin-frame-donations">
+<div>
   <div class="frame-label">Frame 09 — Admin: Donations Management (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2078,12 +2110,12 @@ Join 87 donors already feeding children every single day. Every donation is trac
             <table class="admin-table">
               <thead><tr><th style="width:18px;"><input type="checkbox"/></th><th>Donor</th><th>Campaign</th><th>Amount</th><th>Type</th><th>Stripe ID</th><th>Date</th><th>Status</th><th>Receipt</th><th></th></tr></thead>
               <tbody>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Angela Wilson</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfbeb1b8bab3be9fbab2beb6b3f1bcb0b2">[email&#160;protected]</a></div></td><td><span style="font-size:12px;">🍽️ Feed Filipino Children</span></td><td style="font-weight:700;">$7.99</td><td><span class="status status-recurring">Monthly</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">sub_3kHm9x...</td><td style="font-size:12px;">Mar 29, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Marcus Reid</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e38ecd91868a87a3868e828a8fcd808c8e">[email&#160;protected]</a></div></td><td><span style="font-size:12px;">🌊 Disaster Relief</span></td><td style="font-weight:700;">$50.00</td><td><span class="status status-pending">One-time</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">pi_9aGn4m...</td><td style="font-size:12px;">Mar 28, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Grace Tan</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d6a7f6c6e684d68606c6461236e6260">[email&#160;protected]</a></div></td><td><span style="font-size:12px;">💧 Uganda Water Wells</span></td><td style="font-weight:700;">$100.00</td><td><span class="status status-recurring">Monthly</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">sub_7pLk2w...</td><td style="font-size:12px;">Mar 28, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">James Okafor</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="69030602080f061b290a011c1b0a0147061b0e">[email&#160;protected]</a></div></td><td><span style="font-size:12px;">🍽️ Feed Filipino Children</span></td><td style="font-weight:700;">$500.00</td><td><span class="status status-pending">One-time</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">pi_2mFr8j...</td><td style="font-size:12px;">Mar 27, 2025</td><td><span class="status status-pending">Pending</span></td><td><span style="font-size:11px;color:var(--text-muted);">Pending</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></div></td></tr>
-                <tr style="background:#FEF2F2;"><td><input type="checkbox"/></td><td><div style="font-weight:500;">Robert Kim</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d0f1614103d18101c1411531e1210">[email&#160;protected]</a></div></td><td><span style="font-size:12px;">🌊 Disaster Relief</span></td><td style="font-weight:700;color:#DC2626;">$25.00</td><td><span class="status status-pending">One-time</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">pi_5vBc3t...</td><td style="font-size:12px;">Mar 26, 2025</td><td><span class="status status-failed">Failed</span></td><td><span style="font-size:11px;color:#DC2626;">Card declined</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;border-color:#FECACA;color:#DC2626;">Retry</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Email</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Sandra Flores</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b081d1714091e083b1e161a121755181416">[email&#160;protected]</a></div></td><td><span style="font-size:12px;">📚 Education</span></td><td style="font-weight:700;">$29.99</td><td><span class="status status-recurring">Monthly</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">sub_1xWq5n...</td><td style="font-size:12px;">Mar 25, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
+                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Angela Wilson</div><div style="font-size:11px;color:var(--text-muted);">angela@email.com</div></td><td><span style="font-size:12px;">🍽️ Feed Filipino Children</span></td><td style="font-weight:700;">$7.99</td><td><span class="status status-recurring">Monthly</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">sub_3kHm9x...</td><td style="font-size:12px;">Mar 29, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
+                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Marcus Reid</div><div style="font-size:11px;color:var(--text-muted);">m.reid@email.com</div></td><td><span style="font-size:12px;">🌊 Disaster Relief</span></td><td style="font-weight:700;">$50.00</td><td><span class="status status-pending">One-time</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">pi_9aGn4m...</td><td style="font-size:12px;">Mar 28, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
+                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Grace Tan</div><div style="font-size:11px;color:var(--text-muted);">grace@email.com</div></td><td><span style="font-size:12px;">💧 Uganda Water Wells</span></td><td style="font-weight:700;">$100.00</td><td><span class="status status-recurring">Monthly</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">sub_7pLk2w...</td><td style="font-size:12px;">Mar 28, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
+                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">James Okafor</div><div style="font-size:11px;color:var(--text-muted);">jokafor@church.org</div></td><td><span style="font-size:12px;">🍽️ Feed Filipino Children</span></td><td style="font-weight:700;">$500.00</td><td><span class="status status-pending">One-time</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">pi_2mFr8j...</td><td style="font-size:12px;">Mar 27, 2025</td><td><span class="status status-pending">Pending</span></td><td><span style="font-size:11px;color:var(--text-muted);">Pending</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></div></td></tr>
+                <tr style="background:#FEF2F2;"><td><input type="checkbox"/></td><td><div style="font-weight:500;">Robert Kim</div><div style="font-size:11px;color:var(--text-muted);">rkim@email.com</div></td><td><span style="font-size:12px;">🌊 Disaster Relief</span></td><td style="font-weight:700;color:#DC2626;">$25.00</td><td><span class="status status-pending">One-time</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">pi_5vBc3t...</td><td style="font-size:12px;">Mar 26, 2025</td><td><span class="status status-failed">Failed</span></td><td><span style="font-size:11px;color:#DC2626;">Card declined</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;border-color:#FECACA;color:#DC2626;">Retry</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Email</button></div></td></tr>
+                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Sandra Flores</div><div style="font-size:11px;color:var(--text-muted);">sflores@email.com</div></td><td><span style="font-size:12px;">📚 Education</span></td><td style="font-weight:700;">$29.99</td><td><span class="status status-recurring">Monthly</span></td><td style="font-family:monospace;font-size:11px;color:var(--text-muted);">sub_1xWq5n...</td><td style="font-size:12px;">Mar 25, 2025</td><td><span class="status status-completed">Completed</span></td><td><span style="font-size:11px;color:var(--brand-bright);">✓ Sent</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Receipt</button></div></td></tr>
               </tbody>
             </table>
             <div class="pagination"><div class="pg-info">Showing 6 of 312 donations · Total: $45,624</div><div class="pg-btns"><button class="pg-btn">‹</button><button class="pg-btn active">1</button><button class="pg-btn">2</button><button class="pg-btn">3</button><button class="pg-btn">…</button><button class="pg-btn">52</button><button class="pg-btn">›</button></div></div>
@@ -2095,78 +2127,9 @@ Join 87 donors already feeding children every single day. Every donation is trac
 </div>
 
 <!-- ============================================================ -->
-<!-- FRAME 09b: ADMIN — DONORS                                    -->
-<!-- ============================================================ -->
-<div id="admin-frame-donors">
-  <div class="frame-label">Frame 09b — Admin: Donors (1440px)</div>
-  <div class="frame">
-    <div class="admin-shell">
-      <aside class="admin-sidebar">
-        <div class="admin-logo"><div class="admin-logo-mark">✦</div><div><div class="admin-logo-text">JDGM Admin</div><div class="admin-logo-sub">Filament v3 Panel</div></div></div>
-        <nav class="admin-nav">
-          <div class="admin-nav-section">Main</div><div class="admin-nav-item"><div class="admin-nav-icon">📊</div><div class="admin-nav-label">Dashboard</div></div>
-          <div class="admin-nav-section">Fundraising</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">🎯</div><div class="admin-nav-label">Campaigns</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">💰</div><div class="admin-nav-label">Donations</div><div class="admin-nav-badge">12</div></div>
-          <div class="admin-nav-item active"><div class="admin-nav-icon">👥</div><div class="admin-nav-label">Donors</div></div>
-          <div class="admin-nav-section">Content</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">📄</div><div class="admin-nav-label">Pages</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">✍️</div><div class="admin-nav-label">Blog Posts</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">🌟</div><div class="admin-nav-label">Testimonials</div></div>
-          <div class="admin-nav-section">Community</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">🙋</div><div class="admin-nav-label">Volunteers</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">📅</div><div class="admin-nav-label">Events</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">📧</div><div class="admin-nav-label">Subscribers</div></div>
-          <div class="admin-nav-section">Media &amp; SEO</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">🖼️</div><div class="admin-nav-label">Media Library</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">⚙️</div><div class="admin-nav-label">Site Settings</div></div>
-        </nav>
-        <div class="admin-footer-nav"><div class="admin-nav-item"><div style="width:28px;height:28px;border-radius:50%;background:var(--brand-mid);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">JD</div><div style="flex:1;"><div class="admin-nav-label" style="color:rgba(255,255,255,0.8);font-size:12px;">Pastor Johnny Davis</div></div></div></div>
-      </aside>
-      <div class="admin-main">
-        <div class="admin-topbar"><div class="admin-page-title">Donors</div><div class="admin-topbar-right"><input class="admin-search" placeholder="Search by name, email, or location..."/><button class="tbl-btn">📊 Export CSV</button><div class="admin-user-chip"><div class="admin-user-avatar">JD</div><div class="admin-user-name">Johnny Davis</div></div></div></div>
-        <div class="admin-content">
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px;">
-            <div class="stat-widget"><div class="stat-label">Total Donors</div><div class="stat-icon">👥</div><div class="stat-value">198</div><div class="stat-change up">↑ 14 new this month</div></div>
-            <div class="stat-widget"><div class="stat-label">Monthly Recurring</div><div class="stat-icon">🔄</div><div class="stat-value">87</div><div class="stat-change up">44% of all donors</div></div>
-            <div class="stat-widget"><div class="stat-label">One-Time Donors</div><div class="stat-icon">⚡</div><div class="stat-value">111</div><div class="stat-change up">56% of all donors</div></div>
-            <div class="stat-widget"><div class="stat-label">Avg. Gift (All Time)</div><div class="stat-icon">💛</div><div class="stat-value">$230</div><div class="stat-change up">↑ $18 vs last month</div></div>
-          </div>
-
-          <div style="display:flex;gap:10px;align-items:center;padding:14px 18px;background:#fff;border-radius:var(--r-lg);border:1px solid #E8E8EA;margin-bottom:16px;flex-wrap:wrap;">
-            <span style="font-size:13px;font-weight:700;color:var(--text-muted);">Filter:</span>
-            <select class="admin-select" style="width:160px;margin-bottom:0;padding:7px 12px;font-size:13px;"><option>All Types</option><option>Monthly</option><option>One-Time</option></select>
-            <select class="admin-select" style="width:150px;margin-bottom:0;padding:7px 12px;font-size:13px;"><option>All Tiers</option><option>🏆 Champion ($1k+)</option><option>🤝 Partner ($100–$999)</option><option>💛 Friend (Under $100)</option></select>
-            <select class="admin-select" style="width:200px;margin-bottom:0;padding:7px 12px;font-size:13px;"><option>All Campaigns</option><option>Feed Filipino Children</option><option>Disaster Relief</option><option>Uganda Water Wells</option><option>Education Sponsorship</option><option>Medical Missions</option></select>
-            <select class="admin-select" style="width:150px;margin-bottom:0;padding:7px 12px;font-size:13px;"><option>All Statuses</option><option>Active</option><option>Lapsed</option><option>Attention</option></select>
-            <button class="tbl-btn" style="margin-left:auto;">Clear filters</button>
-          </div>
-
-          <div class="table-card">
-            <div class="table-header"><div class="table-title">198 Donors</div><div class="table-actions"><button class="tbl-btn">📧 Email All</button><button class="tbl-btn">Export CSV</button></div></div>
-            <table class="admin-table">
-              <thead><tr><th style="width:18px;"><input type="checkbox"/></th><th>Donor</th><th>Type</th><th>Total Given</th><th>Donations</th><th>Last Gift</th><th>Campaigns</th><th>Tier</th><th>Status</th><th></th></tr></thead>
-              <tbody>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Angela Wilson</div><div style="font-size:11px;color:var(--text-muted);">angela@example.com · San Diego, CA</div></td><td><span class="status status-recurring">Monthly</span></td><td style="font-weight:700;">$287.64</td><td style="font-size:13px;">36</td><td style="font-size:12px;">Mar 29, 2025</td><td style="font-size:12px;">🍽️ Feed Filipino Children</td><td><span style="font-size:11px;font-weight:700;color:#40916C;background:#D8F3DC;padding:3px 8px;border-radius:100px;">🏆 Champion</span></td><td><span class="status status-completed">Active</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Profile</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">📧 Email</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Marcus Reid</div><div style="font-size:11px;color:var(--text-muted);">marcus@example.com · Atlanta, GA</div></td><td><span class="status status-pending">One-Time</span></td><td style="font-weight:700;">$50.00</td><td style="font-size:13px;">1</td><td style="font-size:12px;">Mar 28, 2025</td><td style="font-size:12px;">🌊 Disaster Relief</td><td><span style="font-size:11px;font-weight:700;color:#6B6B68;background:#F4F4F5;padding:3px 8px;border-radius:100px;">💛 Friend</span></td><td><span class="status status-completed">Active</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Profile</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">📧 Email</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Grace Tan</div><div style="font-size:11px;color:var(--text-muted);">grace@example.com · Honolulu, HI</div></td><td><span class="status status-recurring">Monthly</span></td><td style="font-weight:700;">$3,600.00</td><td style="font-size:13px;">36</td><td style="font-size:12px;">Mar 28, 2025</td><td style="font-size:12px;">💧 Uganda Water Wells</td><td><span style="font-size:11px;font-weight:700;color:#40916C;background:#D8F3DC;padding:3px 8px;border-radius:100px;">🏆 Champion</span></td><td><span class="status status-completed">Active</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Profile</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">📧 Email</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">James Okafor</div><div style="font-size:11px;color:var(--text-muted);">j.okafor@example.com · Houston, TX</div></td><td><span class="status status-pending">One-Time</span></td><td style="font-weight:700;">$500.00</td><td style="font-size:13px;">1</td><td style="font-size:12px;">Mar 27, 2025</td><td style="font-size:12px;">🍽️ Feed Filipino Children</td><td><span style="font-size:11px;font-weight:700;color:#E9A73E;background:#FEF3E2;padding:3px 8px;border-radius:100px;">🤝 Partner</span></td><td><span class="status status-completed">Active</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Profile</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">📧 Email</button></div></td></tr>
-                <tr style="background:#FEF2F2;"><td><input type="checkbox"/></td><td><div style="font-weight:500;">Robert Kim</div><div style="font-size:11px;color:var(--text-muted);">robert@example.com · Los Angeles, CA</div></td><td><span class="status status-pending">One-Time</span></td><td style="font-weight:700;color:#DC2626;">$75.00</td><td style="font-size:13px;">3</td><td style="font-size:12px;">Mar 26, 2025</td><td style="font-size:12px;">🌊 Disaster Relief</td><td><span style="font-size:11px;font-weight:700;color:#6B6B68;background:#F4F4F5;padding:3px 8px;border-radius:100px;">💛 Friend</span></td><td><span class="status status-failed">Attention</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Profile</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;border-color:#FECACA;color:#DC2626;">Follow Up</button></div></td></tr>
-                <tr><td><input type="checkbox"/></td><td><div style="font-weight:500;">Sandra Flores</div><div style="font-size:11px;color:var(--text-muted);">sandra@example.com · Miami, FL</div></td><td><span class="status status-recurring">Monthly</span></td><td style="font-weight:700;">$1,079.64</td><td style="font-size:13px;">36</td><td style="font-size:12px;">Mar 25, 2025</td><td style="font-size:12px;">📚 Education Sponsorship</td><td><span style="font-size:11px;font-weight:700;color:#40916C;background:#D8F3DC;padding:3px 8px;border-radius:100px;">🏆 Champion</span></td><td><span class="status status-completed">Active</span></td><td><div style="display:flex;gap:4px;"><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Profile</button><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">📧 Email</button></div></td></tr>
-              </tbody>
-            </table>
-            <div class="pagination"><div class="pg-info">Showing 6 of 198 donors · Avg. gift: $230</div><div class="pg-btns"><button class="pg-btn">‹</button><button class="pg-btn active">1</button><button class="pg-btn">2</button><button class="pg-btn">3</button><button class="pg-btn">…</button><button class="pg-btn">33</button><button class="pg-btn">›</button></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================ -->
 <!-- FRAME 10: ADMIN — VOLUNTEER MANAGEMENT                       -->
 <!-- ============================================================ -->
-<div id="admin-frame-volunteers">
+<div>
   <div class="frame-label">Frame 10 — Admin: Volunteer Applications (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2223,7 +2186,7 @@ Join 87 donors already feeding children every single day. Every donation is trac
                 </div>
                 <div class="vol-skills"><span class="vol-skill">🏥 Medical / Nursing</span><span class="vol-skill">📦 Logistics</span><span class="vol-skill">🚗 Transportation</span></div>
                 <div style="margin-top:10px;font-size:13px;color:var(--text-body);line-height:1.6;background:var(--bg-page);border-radius:8px;padding:10px 12px;">"I'm a registered nurse with 8 years of ER experience. I've been following JDGM's work for two years and deeply feel called to serve on a medical mission trip. I can commit 2 weeks per year."</div>
-                <div style="margin-top:10px;display:flex;gap:8px;align-items:center;font-size:12px;color:var(--text-muted);"><span>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492d3b2824203b2c33092c24282025672a2624">[email&#160;protected]</a></span><span>·</span><span>📞 (404) 555-0182</span><span>·</span><span>Available: April 10-25</span></div>
+                <div style="margin-top:10px;display:flex;gap:8px;align-items:center;font-size:12px;color:var(--text-muted);"><span>✉️ dramirez@email.com</span><span>·</span><span>📞 (404) 555-0182</span><span>·</span><span>Available: April 10-25</span></div>
                 <div class="vol-actions"><button class="tbl-btn tbl-btn-primary">✓ Accept</button><button class="tbl-btn">📧 Email</button><button class="tbl-btn">📝 Add Note</button><button class="tbl-btn" style="color:#DC2626;border-color:#FECACA;">✗ Decline</button></div>
               </div>
             </div>
@@ -2261,7 +2224,7 @@ Join 87 donors already feeding children every single day. Every donation is trac
 <!-- ============================================================ -->
 <!-- FRAME 11: ADMIN — BLOG POST EDITOR                           -->
 <!-- ============================================================ -->
-<div id="admin-frame-blog">
+<div>
   <div class="frame-label">Frame 11 — Admin: Blog Post Editor (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2382,7 +2345,7 @@ How you can help: Give $7.99/month to feed one child. Give $29.99/month to feed 
 <!-- ============================================================ -->
 <!-- FRAME 12: ADMIN — MEDIA LIBRARY                              -->
 <!-- ============================================================ -->
-<div id="admin-frame-media">
+<div>
   <div class="frame-label">Frame 12 — Admin: Media Library (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2476,7 +2439,7 @@ How you can help: Give $7.99/month to feed one child. Give $29.99/month to feed 
 <!-- ============================================================ -->
 <!-- FRAME 13: ADMIN — SEO ANALYZER                               -->
 <!-- ============================================================ -->
-<div id="admin-frame-seo">
+<div>
   <div class="frame-label">Frame 13 — Admin: SEO Analyzer (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2562,7 +2525,7 @@ How you can help: Give $7.99/month to feed one child. Give $29.99/month to feed 
 <!-- ============================================================ -->
 <!-- FRAME 14: ADMIN — SITE SETTINGS                              -->
 <!-- ============================================================ -->
-<div id="admin-frame-settings">
+<div>
   <div class="frame-label">Frame 14 — Admin: Site Settings (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2648,7 +2611,7 @@ How you can help: Give $7.99/month to feed one child. Give $29.99/month to feed 
 <!-- ============================================================ -->
 <!-- FRAME 15: ADMIN — EMAIL BROADCAST COMPOSER                   -->
 <!-- ============================================================ -->
-<div id="admin-frame-email">
+<div>
   <div class="frame-label">Frame 15 — Admin: Email Broadcast Composer (1440px)</div>
   <div class="frame">
     <div class="admin-shell">
@@ -2667,7 +2630,6 @@ How you can help: Give $7.99/month to feed one child. Give $29.99/month to feed 
           <div class="admin-nav-item"><div class="admin-nav-icon">📅</div><div class="admin-nav-label">Events</div></div>
           <div class="admin-nav-item"><div class="admin-nav-icon">📧</div><div class="admin-nav-label">Subscribers</div></div>
           <div class="admin-nav-item active"><div class="admin-nav-icon">📣</div><div class="admin-nav-label">Email Broadcasts</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">⚡</div><div class="admin-nav-label">Email Sequences</div></div>
           <div class="admin-nav-section">Media &amp; SEO</div>
           <div class="admin-nav-item"><div class="admin-nav-icon">🖼️</div><div class="admin-nav-label">Media Library</div></div>
           <div class="admin-nav-item"><div class="admin-nav-icon">⚙️</div><div class="admin-nav-label">Site Settings</div></div>
@@ -2732,10 +2694,18 @@ JDGM Founder &amp; Executive Director</textarea>
                     <div style="background:#D8F3DC;border-radius:8px;padding:12px;margin-bottom:12px;font-size:12px;color:#1A3A2A;"><strong>🍽️ 2,400 meals</strong> served across 18 barangays in Cebu</div>
                     <div style="background:#E6F1FB;border-radius:8px;padding:12px;margin-bottom:16px;font-size:12px;color:#0C447C;"><strong>💧 Well #7 complete</strong> — 200 families now have clean water</div>
                     <div style="text-align:center;"><div style="display:inline-block;background:#E9A73E;color:#1A3A2A;padding:10px 24px;border-radius:100px;font-size:13px;font-weight:700;">♡ Give $7.99 — Feed a Child</div></div>
-                    <div style="margin-top:14px;font-size:11px;color:#9E9B95;">
-                    </div>
+                    <div style="margin-top:14px;font-size:11px;color:#9E9B95;text-align:center;">Unsubscribe · View online · JDGM · Suwanee, GA 30024</div>
                   </div>
                 </div>
+              </div>
+              <div class="admin-form-card">
+                <div class="admin-form-card-title">Schedule &amp; Send</div>
+                <div class="toggle-row"><div class="toggle-info">Schedule for later<small>Apr 3, 2025 at 9:00 AM EST</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
+                <div class="toggle-row" style="border-bottom:none;"><div class="toggle-info">Track open rates<small>Via Mailcoach / Mailchimp</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
+                <hr style="margin:14px 0;border-color:#F0F0F2;"/>
+                <div class="sidebar-meta-item"><span class="meta-key">Recipients</span><span class="meta-val">312 subscribers</span></div>
+                <div class="sidebar-meta-item"><span class="meta-key">Avg open rate</span><span class="meta-val" style="color:var(--brand-mid);">38.4%</span></div>
+                <div class="sidebar-meta-item" style="border-bottom:none;"><span class="meta-key">Last broadcast</span><span class="meta-val">Mar 3 · 41% open rate</span></div>
               </div>
             </div>
           </div>
@@ -2745,444 +2715,6 @@ JDGM Founder &amp; Executive Director</textarea>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- FRAME 16: ADMIN — EMAIL WELCOME SEQUENCE                     -->
-<!-- ============================================================ -->
-<div id="admin-frame-email-sequence">
-  <div class="frame-label">Frame 16 — Admin: Email Welcome Sequence (1440px)</div>
-  <div class="frame">
-    <div class="admin-shell">
-      <aside class="admin-sidebar">
-        <div class="admin-logo"><div class="admin-logo-mark">✦</div><div><div class="admin-logo-text">JDGM Admin</div><div class="admin-logo-sub">Filament v3 Panel</div></div></div>
-        <nav class="admin-nav">
-          <div class="admin-nav-section">Main</div><div class="admin-nav-item"><div class="admin-nav-icon">📊</div><div class="admin-nav-label">Dashboard</div></div>
-          <div class="admin-nav-section">Fundraising</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">🎯</div><div class="admin-nav-label">Campaigns</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">💰</div><div class="admin-nav-label">Donations</div><div class="admin-nav-badge">12</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">👥</div><div class="admin-nav-label">Donors</div></div>
-          <div class="admin-nav-section">Content</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">📄</div><div class="admin-nav-label">Pages</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">✍️</div><div class="admin-nav-label">Blog Posts</div></div>
-          <div class="admin-nav-section">Community</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">🙋</div><div class="admin-nav-label">Volunteers</div><div class="admin-nav-badge">5</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">📅</div><div class="admin-nav-label">Events</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">📧</div><div class="admin-nav-label">Subscribers</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">📣</div><div class="admin-nav-label">Email Broadcasts</div></div>
-          <div class="admin-nav-item active"><div class="admin-nav-icon">⚡</div><div class="admin-nav-label">Email Sequences</div></div>
-          <div class="admin-nav-section">Media &amp; SEO</div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">🖼️</div><div class="admin-nav-label">Media Library</div></div>
-          <div class="admin-nav-item"><div class="admin-nav-icon">⚙️</div><div class="admin-nav-label">Site Settings</div></div>
-        </nav>
-        <div class="admin-footer-nav"><div class="admin-nav-item"><div style="width:28px;height:28px;border-radius:50%;background:var(--brand-mid);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">JD</div><div style="flex:1;"><div class="admin-nav-label" style="color:rgba(255,255,255,0.8);font-size:12px;">Pastor Johnny Davis</div></div></div></div>
-      </aside>
-      <div class="admin-main">
-        <div class="admin-topbar">
-          <div class="admin-page-title">Email Sequences</div>
-          <div class="admin-topbar-right">
-            <button class="tbl-btn">📊 View Analytics</button>
-            <button class="tbl-btn tbl-btn-primary">+ New Sequence</button>
-            <div class="admin-user-chip"><div class="admin-user-avatar">JD</div><div class="admin-user-name">Johnny Davis</div></div>
-          </div>
-        </div>
-        <div class="admin-content">
-          <div class="admin-breadcrumb"><span class="ab-item">Email Sequences</span><span class="ab-sep">›</span><span class="ab-current">New Donor Welcome Sequence</span></div>
-
-          <!-- Sequence header -->
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;">
-            <div>
-              <div style="font-size:20px;font-weight:700;color:var(--text-dark);margin-bottom:4px;">New Donor Welcome Sequence</div>
-              <div style="font-size:13px;color:var(--text-muted);">Triggered automatically when a donor completes their first donation · 5 emails over 45 days</div>
-            </div>
-            <div style="display:flex;gap:10px;">
-              <button class="tbl-btn">⚙️ Settings</button>
-              <button class="tbl-btn">📋 Duplicate</button>
-              <button class="tbl-btn tbl-btn-primary">✏️ Edit Sequence</button>
-            </div>
-          </div>
-
-          <!-- Overview stats -->
-          <div class="seq-overview">
-            <div class="seq-stat">
-              <div class="seq-stat-label">Total Enrolled</div>
-              <div class="seq-stat-value">198</div>
-              <div class="seq-stat-sub">↑ 14 new donors this month</div>
-            </div>
-            <div class="seq-stat">
-              <div class="seq-stat-label">Avg. Open Rate</div>
-              <div class="seq-stat-value">61%</div>
-              <div class="seq-stat-sub">Industry avg: 28% · 🏆 Excellent</div>
-            </div>
-            <div class="seq-stat">
-              <div class="seq-stat-label">Completed Sequence</div>
-              <div class="seq-stat-value">143</div>
-              <div class="seq-stat-sub">72% of enrolled donors</div>
-            </div>
-            <div class="seq-stat" style="border-color:var(--brand-bright);">
-              <div class="seq-stat-label" style="color:var(--brand-bright);">Converted to Monthly</div>
-              <div class="seq-stat-value" style="color:var(--brand-bright);">24</div>
-              <div class="seq-stat-sub">12% upgrade rate · $480 new MRR</div>
-            </div>
-          </div>
-
-          <!-- Live toggle -->
-          <div class="seq-toggle-bar">
-            <div>
-              <div class="seq-toggle-info">Sequence Status: <span style="color:var(--brand-bright);font-weight:700;">● Live</span><small>Automatically enrolls every new donor upon successful payment</small></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <span style="font-size:12px;color:var(--text-muted);">Pause sequence</span>
-              <div class="seq-toggle"></div>
-            </div>
-          </div>
-
-          <!-- Timeline -->
-          <div style="display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:flex-start;">
-            <div class="seq-timeline">
-
-              <!-- Step 1 -->
-              <div class="seq-step">
-                <div class="seq-node">1</div>
-                <div class="seq-connector"></div>
-                <div class="seq-delay-row">
-                  <span class="seq-delay-badge immediate">⚡ Immediate — sent on donation confirmation</span>
-                  <div class="seq-delay-line"></div>
-                </div>
-                <div class="seq-card">
-                  <div class="seq-card-top">
-                    <div>
-                      <div class="seq-card-subject">Your donation receipt — Thank you, {{first_name}} 🙏</div>
-                      <div class="seq-card-preview">Hi {{first_name}}, here is your official tax-deductible receipt for your gift to JDGM. Your contribution is already making a difference...</div>
-                    </div>
-                    <span class="seq-type-badge" style="background:#D8F3DC;color:#1A6640;">Receipt</span>
-                  </div>
-                  <div class="seq-stats-row">
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">99%</div><div class="seq-stat-item-lbl">Delivered</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">74%</div><div class="seq-stat-item-lbl">Opened</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">38%</div><div class="seq-stat-item-lbl">Clicked</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">0%</div><div class="seq-stat-item-lbl">Unsubscribed</div></div>
-                  </div>
-                  <div class="seq-card-actions">
-                    <button class="tbl-btn" style="font-size:12px;">✏️ Edit Email</button>
-                    <button class="tbl-btn" style="font-size:12px;">👁 Preview</button>
-                    <button class="tbl-btn" style="font-size:12px;">📋 Duplicate</button>
-                    <span class="status status-completed" style="margin-left:auto;">Active</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Step 2 -->
-              <div class="seq-step">
-                <div class="seq-node">2</div>
-                <div class="seq-connector"></div>
-                <div class="seq-delay-row">
-                  <span class="seq-delay-badge">⏱ Day 3 — 3 days after donation</span>
-                  <div class="seq-delay-line"></div>
-                  <button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Change delay</button>
-                </div>
-                <div class="seq-card">
-                  <div class="seq-card-top">
-                    <div>
-                      <div class="seq-card-subject">The story behind the meals you're funding 🍽️</div>
-                      <div class="seq-card-preview">{{first_name}}, in Cebu, Philippines, 100+ children line up every morning because of people like you. Here's what that looks like...</div>
-                    </div>
-                    <span class="seq-type-badge" style="background:#FEF3E2;color:#92400E;">Mission Story</span>
-                  </div>
-                  <div class="seq-stats-row">
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">98%</div><div class="seq-stat-item-lbl">Delivered</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">68%</div><div class="seq-stat-item-lbl">Opened</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">24%</div><div class="seq-stat-item-lbl">Clicked</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">0.5%</div><div class="seq-stat-item-lbl">Unsubscribed</div></div>
-                  </div>
-                  <div class="seq-card-actions">
-                    <button class="tbl-btn" style="font-size:12px;">✏️ Edit Email</button>
-                    <button class="tbl-btn" style="font-size:12px;">👁 Preview</button>
-                    <button class="tbl-btn" style="font-size:12px;">📋 Duplicate</button>
-                    <span class="status status-completed" style="margin-left:auto;">Active</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Step 3 -->
-              <div class="seq-step">
-                <div class="seq-node">3</div>
-                <div class="seq-connector"></div>
-                <div class="seq-delay-row">
-                  <span class="seq-delay-badge">⏱ Day 14 — 14 days after donation</span>
-                  <div class="seq-delay-line"></div>
-                  <button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Change delay</button>
-                </div>
-                <div class="seq-card">
-                  <div class="seq-card-top">
-                    <div>
-                      <div class="seq-card-subject">Here's the real-world impact of your gift so far ✦</div>
-                      <div class="seq-card-preview">Two weeks in, {{first_name}}. Your gift has already contributed to X meals served, Y children reached, and more. Here's a live snapshot of your impact...</div>
-                    </div>
-                    <span class="seq-type-badge" style="background:#DBEAFE;color:#1D4ED8;">Impact Update</span>
-                  </div>
-                  <div class="seq-stats-row">
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">98%</div><div class="seq-stat-item-lbl">Delivered</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">61%</div><div class="seq-stat-item-lbl">Opened</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">31%</div><div class="seq-stat-item-lbl">Clicked</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">0.8%</div><div class="seq-stat-item-lbl">Unsubscribed</div></div>
-                  </div>
-                  <div class="seq-card-actions">
-                    <button class="tbl-btn" style="font-size:12px;">✏️ Edit Email</button>
-                    <button class="tbl-btn" style="font-size:12px;">👁 Preview</button>
-                    <button class="tbl-btn" style="font-size:12px;">📋 Duplicate</button>
-                    <span class="status status-completed" style="margin-left:auto;">Active</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Step 4 -->
-              <div class="seq-step">
-                <div class="seq-node">4</div>
-                <div class="seq-connector"></div>
-                <div class="seq-delay-row">
-                  <span class="seq-delay-badge">⏱ Day 30 — 30 days after donation</span>
-                  <div class="seq-delay-line"></div>
-                  <button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Change delay</button>
-                </div>
-                <div class="seq-card">
-                  <div class="seq-card-top">
-                    <div>
-                      <div class="seq-card-subject">30 days in — a personal update from Pastor Johnny</div>
-                      <div class="seq-card-preview">{{first_name}}, one month ago you made a decision that changed lives. Pastor Johnny wanted to write to you personally with an update from the field...</div>
-                    </div>
-                    <span class="seq-type-badge" style="background:#F3E8FF;color:#7C3AED;">Follow-Up</span>
-                  </div>
-                  <div class="seq-stats-row">
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">97%</div><div class="seq-stat-item-lbl">Delivered</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">54%</div><div class="seq-stat-item-lbl">Opened</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">18%</div><div class="seq-stat-item-lbl">Clicked</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">1.1%</div><div class="seq-stat-item-lbl">Unsubscribed</div></div>
-                  </div>
-                  <div class="seq-card-actions">
-                    <button class="tbl-btn" style="font-size:12px;">✏️ Edit Email</button>
-                    <button class="tbl-btn" style="font-size:12px;">👁 Preview</button>
-                    <button class="tbl-btn" style="font-size:12px;">📋 Duplicate</button>
-                    <span class="status status-completed" style="margin-left:auto;">Active</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Step 5 -->
-              <div class="seq-step">
-                <div class="seq-node" style="background:var(--gold);">5</div>
-                <div class="seq-delay-row">
-                  <span class="seq-delay-badge">⏱ Day 45 — 45 days after donation</span>
-                  <div class="seq-delay-line"></div>
-                  <button class="tbl-btn" style="font-size:11px;padding:3px 8px;">Change delay</button>
-                </div>
-                <div class="seq-card" style="border-color:var(--gold);background:linear-gradient(135deg,#FFFBF0,#fff);">
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;"><span style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;">⭐ Upgrade Ask — Highest conversion step</span></div>
-                  <div class="seq-card-top">
-                    <div>
-                      <div class="seq-card-subject">Could you become a monthly supporter? Here's why it matters</div>
-                      <div class="seq-card-preview">{{first_name}}, monthly donors are the backbone of everything we do in the Philippines and Uganda. Just $7.99/month feeds a child for 30 days. Would you consider...</div>
-                    </div>
-                    <span class="seq-type-badge" style="background:#FEF3E2;color:#D97706;border:1px solid #FCD34D;">Monthly Ask</span>
-                  </div>
-                  <div class="seq-stats-row">
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">97%</div><div class="seq-stat-item-lbl">Delivered</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">48%</div><div class="seq-stat-item-lbl">Opened</div></div>
-                    <div class="seq-stat-item"><div class="seq-stat-item-val">22%</div><div class="seq-stat-item-lbl">Clicked</div></div>
-                    <div class="seq-stat-item" style="background:#F0FAF4;border-radius:8px;padding:4px 12px;"><div class="seq-stat-item-val" style="color:var(--brand-bright);">12%</div><div class="seq-stat-item-lbl" style="color:var(--brand-bright);">Converted ✓</div></div>
-                  </div>
-                  <div class="seq-card-actions">
-                    <button class="tbl-btn" style="font-size:12px;">✏️ Edit Email</button>
-                    <button class="tbl-btn" style="font-size:12px;">👁 Preview</button>
-                    <button class="tbl-btn" style="font-size:12px;">📋 Duplicate</button>
-                    <span class="status status-completed" style="margin-left:auto;">Active</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Add step -->
-              <div class="seq-add-step">
-                <span style="font-size:18px;">+</span> Add another step to this sequence
-              </div>
-
-            </div>
-
-            <!-- Right sidebar -->
-            <div style="position:sticky;top:20px;">
-              <div class="table-card" style="margin-bottom:16px;">
-                <div class="table-header"><div class="table-title" style="font-size:13px;">Trigger Conditions</div></div>
-                <div style="padding:14px 16px;">
-                  <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">Sequence starts when:</div>
-                  <div style="display:flex;flex-direction:column;gap:8px;">
-                    <div style="display:flex;align-items:center;gap:8px;font-size:13px;"><span style="color:var(--brand-bright);">✓</span> Donor completes first donation</div>
-                    <div style="display:flex;align-items:center;gap:8px;font-size:13px;"><span style="color:var(--brand-bright);">✓</span> Payment status = Completed</div>
-                    <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);"><span>○</span> Exclude existing monthly donors</div>
-                  </div>
-                  <div style="margin-top:14px;padding-top:12px;border-top:1px solid #F4F4F5;">
-                    <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">Sequence stops when:</div>
-                    <div style="display:flex;align-items:center;gap:8px;font-size:13px;"><span style="color:var(--brand-bright);">✓</span> Donor upgrades to monthly</div>
-                    <div style="display:flex;align-items:center;gap:8px;font-size:13px;margin-top:6px;"><span style="color:var(--brand-bright);">✓</span> Donor unsubscribes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="table-card" style="margin-bottom:16px;">
-                <div class="table-header"><div class="table-title" style="font-size:13px;">Recent Enrollments</div></div>
-                <div style="padding:10px 16px;">
-                  <div style="display:flex;flex-direction:column;gap:10px;">
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;"><span style="font-weight:500;">Angela Wilson</span><span class="status status-recurring" style="font-size:10px;">Step 5</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;"><span style="font-weight:500;">Marcus Reid</span><span class="status status-pending" style="font-size:10px;">Step 2</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;"><span style="font-weight:500;">Grace Tan</span><span style="font-size:10px;color:var(--brand-bright);font-weight:600;">✓ Converted</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;"><span style="font-weight:500;">James Okafor</span><span class="status status-pending" style="font-size:10px;">Step 1</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;"><span style="font-weight:500;">Sandra Flores</span><span style="font-size:10px;color:var(--brand-bright);font-weight:600;">✓ Converted</span></div>
-                  </div>
-                  <button class="tbl-btn" style="width:100%;margin-top:12px;font-size:12px;text-align:center;">View all 198 enrolled →</button>
-                </div>
-              </div>
-
-              <div style="background:var(--brand-pale);border-radius:var(--r-lg);padding:16px;">
-                <div style="font-size:12px;font-weight:700;color:var(--brand-deep);margin-bottom:8px;">💡 Optimisation Tip</div>
-                <div style="font-size:12px;color:var(--brand-mid);line-height:1.6;">Step 2 (Mission Story) has a 68% open rate. Consider A/B testing the subject line on Step 4 — its 54% open rate has room to grow.</div>
-                <button class="tbl-btn" style="margin-top:10px;font-size:11px;">Set up A/B test →</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================ -->
-<!-- END OF FIGMA FRAMES                                          -->
-<!-- ============================================================ -->
-</div><!-- end .figma-canvas -->
-
-<!-- ADMIN SIDEBAR TOAST -->
-<div id="admin-nav-toast">
-  <span id="admin-nav-toast-icon"></span>
-  <span id="admin-nav-toast-msg"></span>
-</div>
-
-<script>
-(function() {
-  'use strict';
-
-  const NAV_MAP = {
-    'Dashboard':        { frame: 'admin-frame-dashboard',  tooltip: 'Mission command center. See all KPIs, donation charts, campaign progress, and action items in one view.', tag: 'Main' },
-    'Campaigns':        { frame: 'admin-frame-campaigns',  tooltip: 'Create, edit, and publish fundraising campaigns. Set goals, track progress, and control donor visibility.', tag: 'Fundraising' },
-    'Donations':        { frame: 'admin-frame-donations',  tooltip: 'Full ledger of every donation. Filter by campaign, status, and donor. Export CSV for accounting.', tag: 'Fundraising', badge: '12 new' },
-    'Donors':           { frame: 'admin-frame-donors',     tooltip: 'Browse all donor profiles, giving history, and communication preferences.', tag: 'Fundraising' },
-    'Pages':            { frame: null,                      tooltip: 'Edit static site pages like Home, About, and Programs. Changes go live after saving.', tag: 'Content' },
-    'Blog Posts':       { frame: 'admin-frame-blog',       tooltip: 'Write and publish field reports, impact stories, and mission updates with the rich text editor.', tag: 'Content' },
-    'Impact Stories':   { frame: null,                      tooltip: 'Spotlight donor-facing stories that show real lives changed by giving.', tag: 'Content' },
-    'Testimonials':     { frame: null,                      tooltip: 'Manage quotes and endorsements displayed across the site.', tag: 'Content' },
-    'Volunteers':       { frame: 'admin-frame-volunteers', tooltip: 'Review applications, approve volunteers, assign roles, and track field engagement.', tag: 'Community', badge: '5 pending' },
-    'Events':           { frame: null,                      tooltip: 'Create mission trips, medical missions, and fundraising events. Manage RSVPs and attendance.', tag: 'Community' },
-    'Subscribers':      { frame: null,                      tooltip: 'Your full email list of 312+ supporters. Segment, tag, and manage opt-outs.', tag: 'Community' },
-    'Email Broadcasts': { frame: 'admin-frame-email',          tooltip: 'Compose and schedule newsletters. Preview in-browser before sending to all 312 subscribers.', tag: 'Community' },
-    'Email Sequences':  { frame: 'admin-frame-email-sequence', tooltip: 'Automated drip sequences for new donors — receipt, mission story, impact update, follow-up, and monthly upgrade ask.', tag: 'Community' },
-    'Media Library':    { frame: 'admin-frame-media',      tooltip: 'Upload and organise all photos, videos, and documents used across the site.', tag: 'Media & SEO' },
-    'SEO Analyzer':     { frame: 'admin-frame-seo',        tooltip: 'Score every page for search visibility. Fix meta tags, keywords, and broken links.', tag: 'Media & SEO' },
-    'Site Settings':    { frame: 'admin-frame-settings',   tooltip: 'Configure organisation name, Stripe keys, social media links, and site-wide impact counters.', tag: 'System' },
-    'Users & Roles':    { frame: null,                      tooltip: 'Manage admin accounts and assign Super Admin, Editor, or Viewer roles.', tag: 'System' },
-    'Security Log':     { frame: null,                      tooltip: 'Audit trail of all login activity, admin changes, and suspicious access events.', tag: 'System' },
-  };
-
-  /* Toast */
-  const toast     = document.getElementById('admin-nav-toast');
-  const toastMsg  = document.getElementById('admin-nav-toast-msg');
-  const toastIcon = document.getElementById('admin-nav-toast-icon');
-  let   toastTimer = null;
-
-  function showToast(icon, msg) {
-    toastIcon.textContent = icon;
-    toastMsg.textContent  = msg;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-  }
-
-  /* Ripple */
-  function addRipple(el, e) {
-    const rect   = el.getBoundingClientRect();
-    const size   = Math.max(rect.width, rect.height) * 2;
-    const x      = e.clientX - rect.left - size / 2;
-    const y      = e.clientY - rect.top  - size / 2;
-    const r      = document.createElement('span');
-    r.className  = 'nav-ripple';
-    r.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
-    el.appendChild(r);
-    r.addEventListener('animationend', () => r.remove());
-  }
-
-  /* Navigate */
-  function navigateTo(frameId, label) {
-    const target  = document.getElementById(frameId);
-    if (!target) { showToast('🚧', label + ' — frame not found'); return; }
-    const frameEl = target.querySelector('.frame');
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (frameEl) {
-      frameEl.classList.remove('admin-frame-flash');
-      void frameEl.offsetWidth;
-      frameEl.classList.add('admin-frame-flash');
-      setTimeout(() => frameEl.classList.remove('admin-frame-flash'), 1200);
-    }
-    showToast('✦', 'Navigated to ' + label);
-  }
-
-  /* Shared tooltip — lives on document.body, immune to parent transforms/overflow */
-  const sharedTip = document.createElement('div');
-  sharedTip.className = 'nav-tooltip';
-  document.body.appendChild(sharedTip);
-
-  function showTip(data, label, itemEl) {
-    const badge = data.badge
-      ? `<div class="nav-tooltip-badge">🔔 ${data.badge}</div>`
-      : `<div class="nav-tooltip-tag">${data.tag}</div>`;
-    const hint = data.frame
-      ? '<div class="nav-tooltip-desc" style="margin-top:5px;color:rgba(255,255,255,0.3);font-size:11px;">↗ Click to jump to this section</div>'
-      : '<div class="nav-tooltip-desc" style="margin-top:5px;color:rgba(255,255,255,0.25);font-size:11px;">🔒 Full UI available in production</div>';
-    sharedTip.innerHTML = `
-      <div class="nav-tooltip-title">${label}</div>
-      <div class="nav-tooltip-desc">${data.tooltip}</div>
-      ${hint}${badge}`;
-    const rect      = itemEl.getBoundingClientRect();
-    const shell     = itemEl.closest('.admin-shell');
-    const adminMain = shell && shell.querySelector('.admin-main');
-    const left      = adminMain ? adminMain.getBoundingClientRect().left + 12 : rect.right + 14;
-    sharedTip.style.left = left + 'px';
-    sharedTip.style.top  = (rect.top + rect.height / 2) + 'px';
-    sharedTip.classList.add('nav-tooltip-visible');
-  }
-
-  function hideTip() {
-    sharedTip.classList.remove('nav-tooltip-visible');
-  }
-
-  /* Wire all nav items */
-  function init() {
-    document.querySelectorAll('.admin-nav-item').forEach(item => {
-      const labelEl = item.querySelector('.admin-nav-label');
-      if (!labelEl) return;
-      const label = labelEl.textContent.trim();
-      const data  = NAV_MAP[label];
-      if (!data)  return;
-      item.addEventListener('click', function(e) {
-        addRipple(this, e);
-        if (data.frame) navigateTo(data.frame, label);
-        else showToast('🚧', label + ' — coming in next sprint');
-      });
-      item.addEventListener('mouseenter', function() { showTip(data, label, this); });
-      item.addEventListener('mouseleave', hideTip);
-    });
-  }
-
-  window.navigateTo = navigateTo;
-
-  document.readyState === 'loading'
-    ? document.addEventListener('DOMContentLoaded', init)
-    : init();
-})();
-</script>
+</div><!-- close figma-canvas -->
 </body>
 </html>
