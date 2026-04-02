@@ -855,13 +855,13 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
   position:relative; cursor:pointer;
 }
 .toggle-switch.on { background:var(--brand-bright); }
-.toggle-switch.off { background:#D1D5DB; }
+.toggle-switch.off { background:#fff; border:1px solid #E5E7EB; }
 .toggle-thumb {
   position:absolute; top:3px; width:18px; height:18px;
   border-radius:50%; background:#fff; transition:all 0.2s;
 }
-.toggle-switch.on .toggle-thumb { left:23px; }
-.toggle-switch.off .toggle-thumb { left:3px; }
+.toggle-switch.on .toggle-thumb { left:23px; background:#fff; }
+.toggle-switch.off .toggle-thumb { left:3px; background:#22C55E; }
 .sidebar-meta-item { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid #F0F0F2; font-size:13px; }
 .meta-key { color:var(--text-muted); }
 .meta-val { font-weight:500; color:var(--text-dark); }
@@ -1986,14 +1986,14 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
             <div class="chart-wrap">
               <div class="chart-header">
                 <div><div class="chart-title">Donation Revenue — March 2025</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Daily total · One-time + Recurring</div></div>
-                <div class="chart-range"><button class="chart-range-btn">7d</button><button class="chart-range-btn active">30d</button><button class="chart-range-btn">90d</button><button class="chart-range-btn">1yr</button></div>
+                <div class="chart-range" id="donation-chart-range"><button class="chart-range-btn" data-period="7d">7d</button><button class="chart-range-btn active" data-period="30d">30d</button><button class="chart-range-btn" data-period="90d">90d</button><button class="chart-range-btn" data-period="1yr">1yr</button></div>
               </div>
-              <div class="chart-area">
-                <div class="chart-bars">
+              <div class="chart-area" id="donation-chart">
+                <div class="chart-bars" id="donation-bars">
                   <div class="chart-bar" style="height:22%"></div><div class="chart-bar" style="height:35%"></div><div class="chart-bar" style="height:28%"></div><div class="chart-bar" style="height:50%"></div><div class="chart-bar" style="height:42%"></div><div class="chart-bar" style="height:38%"></div><div class="chart-bar" style="height:68%"></div><div class="chart-bar" style="height:55%"></div><div class="chart-bar" style="height:72%"></div><div class="chart-bar" style="height:60%"></div><div class="chart-bar" style="height:48%"></div><div class="chart-bar" style="height:80%"></div><div class="chart-bar" style="height:74%"></div><div class="chart-bar" style="height:90%"></div><div class="chart-bar" style="height:85%"></div>
                 </div>
               </div>
-              <div class="chart-x-labels">
+              <div class="chart-x-labels" id="donation-labels">
                 <div class="chart-x-label">Mar 1</div><div class="chart-x-label"></div><div class="chart-x-label">5</div><div class="chart-x-label"></div><div class="chart-x-label">10</div><div class="chart-x-label"></div><div class="chart-x-label">15</div><div class="chart-x-label"></div><div class="chart-x-label">20</div><div class="chart-x-label"></div><div class="chart-x-label">25</div><div class="chart-x-label"></div><div class="chart-x-label">Mar 30</div><div class="chart-x-label"></div><div class="chart-x-label"></div>
               </div>
             </div>
@@ -2013,17 +2013,27 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
           <div style="display:grid;grid-template-columns:1fr 380px;gap:18px;">
             <div class="table-card">
               <div class="table-header"><div class="table-title">Recent Donations</div><div class="table-actions"><button class="tbl-btn">Export CSV</button><button class="tbl-btn tbl-btn-primary">View All →</button></div></div>
-              <table class="admin-table">
+              <table class="admin-table" id="donations-table">
                 <thead><tr><th>Donor</th><th>Campaign</th><th>Amount</th><th>Type</th><th>Date</th><th>Status</th><th></th></tr></thead>
                 <tbody>
-                  <tr><td><div style="font-weight:500;">Angela Wilson</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a7a8a1a3aaa786a3aba7afaae8a5a9ab">[email&#160;protected]</a></div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$7.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 29</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">Marcus Reid</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ff2b1edfaf6fbdffaf2fef6f3b1fcf0f2">[email&#160;protected]</a></div></td><td>Disaster Relief</td><td style="font-weight:700;">$50.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">Grace Tan</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ee9fcefedebceebe3efe7e2a0ede1e3">[email&#160;protected]</a></div></td><td>Uganda Water Wells</td><td style="font-weight:700;">$100.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">James Okafor</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1712161c1b120f3d1e15080f1e1553120f1a">[email&#160;protected]</a></div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$500.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 27</td><td><span class="status status-pending">Pending</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
-                  <tr><td><div style="font-weight:500;">Sandra Flores</div><div style="font-size:11px;color:var(--text-muted);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8af9ece6e5f8eff9caefe7ebe3e6a4e9e5e7">[email&#160;protected]</a></div></td><td>Education Sponsorship</td><td style="font-weight:700;">$29.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 27</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="1"><td><div style="font-weight:500;">Angela Wilson</div><div style="font-size:11px;color:var(--text-muted);">awilson@email.com</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$7.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 29</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="1"><td><div style="font-weight:500;">Marcus Reid</div><div style="font-size:11px;color:var(--text-muted);">mreid@email.com</div></td><td>Disaster Relief</td><td style="font-weight:700;">$50.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="1"><td><div style="font-weight:500;">Grace Tan</div><div style="font-size:11px;color:var(--text-muted);">gtan@email.com</div></td><td>Uganda Water Wells</td><td style="font-weight:700;">$100.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 28</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="1"><td><div style="font-weight:500;">James Okafor</div><div style="font-size:11px;color:var(--text-muted);">jokafor@email.com</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$500.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 27</td><td><span class="status status-pending">Pending</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="1"><td><div style="font-weight:500;">Sandra Flores</div><div style="font-size:11px;color:var(--text-muted);">sflores@email.com</div></td><td>Education Sponsorship</td><td style="font-weight:700;">$29.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 27</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="2"><td><div style="font-weight:500;">David Chen</div><div style="font-size:11px;color:var(--text-muted);">dchen@email.com</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$25.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 26</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="2"><td><div style="font-weight:500;">Maria Garcia</div><div style="font-size:11px;color:var(--text-muted);">mgarcia@email.com</div></td><td>Disaster Relief</td><td style="font-weight:700;">$150.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 26</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="2"><td><div style="font-weight:500;">Robert Kim</div><div style="font-size:11px;color:var(--text-muted);">rkim@email.com</div></td><td>Uganda Water Wells</td><td style="font-weight:700;">$75.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 25</td><td><span class="status status-pending">Pending</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="2"><td><div style="font-weight:500;">Emily Johnson</div><div style="font-size:11px;color:var(--text-muted);">ejohnson@email.com</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$200.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 25</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="2"><td><div style="font-weight:500;">Christopher Lee</div><div style="font-size:11px;color:var(--text-muted);">clee@email.com</div></td><td>Education Sponsorship</td><td style="font-weight:700;">$49.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 24</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="3"><td><div style="font-weight:500;">Patricia Martinez</div><div style="font-size:11px;color:var(--text-muted);">pmartinez@email.com</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$15.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 24</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="3"><td><div style="font-weight:500;">Michael Brown</div><div style="font-size:11px;color:var(--text-muted);">mbrown@email.com</div></td><td>Disaster Relief</td><td style="font-weight:700;">$250.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 23</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="3"><td><div style="font-weight:500;">Lisa Anderson</div><div style="font-size:11px;color:var(--text-muted);">landerson@email.com</div></td><td>Uganda Water Wells</td><td style="font-weight:700;">$120.00</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 23</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="3"><td><div style="font-weight:500;">William Thompson</div><div style="font-size:11px;color:var(--text-muted);">wthompson@email.com</div></td><td>Feed Filipino Children</td><td style="font-weight:700;">$35.00</td><td><span class="status status-pending">One-time</span></td><td>Mar 22</td><td><span class="status status-pending">Pending</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
+                  <tr class="donation-row" data-page="3"><td><div style="font-weight:500;">Jennifer White</div><div style="font-size:11px;color:var(--text-muted);">jwhite@email.com</div></td><td>Education Sponsorship</td><td style="font-weight:700;">$59.99</td><td><span class="status status-recurring">Monthly</span></td><td>Mar 22</td><td><span class="status status-completed">Completed</span></td><td><button class="tbl-btn" style="font-size:11px;padding:3px 8px;">View</button></td></tr>
                 </tbody>
               </table>
-              <div class="pagination"><div class="pg-info">Showing 5 of 312</div><div class="pg-btns"><button class="pg-btn">‹</button><button class="pg-btn active">1</button><button class="pg-btn">2</button><button class="pg-btn">3</button><button class="pg-btn">›</button></div></div>
+              <div class="pagination" id="donations-pagination"><div class="pg-info">Showing <span id="pg-current">5</span> of 312</div><div class="pg-btns"><button class="pg-btn pg-prev">‹</button><button class="pg-btn active" data-page="1">1</button><button class="pg-btn" data-page="2">2</button><button class="pg-btn" data-page="3">3</button><button class="pg-btn pg-next">›</button></div></div>
             </div>
 
             <!-- Action queue -->
@@ -2066,6 +2076,141 @@ body { font-family:'DM Sans',sans-serif; background:#E8E6E1; }
     </div>
   </div>
 </div>
+
+<script>
+(function() {
+  const chartData = {
+    '7d': {
+      bars: [85, 90, 78, 92, 88, 85, 95],
+      labels: ['Mar 24', '', 'Mar 26', '', 'Mar 28', '', 'Mar 30']
+    },
+    '30d': {
+      bars: [22, 35, 28, 50, 42, 38, 68, 55, 72, 60, 48, 80, 74, 90, 85],
+      labels: ['Mar 1', '', '5', '', '10', '', '15', '', '20', '', '25', '', 'Mar 30', '', '']
+    },
+    '90d': {
+      bars: [18, 25, 32, 45, 38, 55, 62, 48, 70, 58, 72, 65, 80, 75, 88],
+      labels: ['Mar 1', '', 'Mar 15', '', 'Mar 30', '', 'Apr 15', '', 'Apr 30', '', 'May 15', '', 'May 30', '', '']
+    },
+    '1yr': {
+      bars: [42, 48, 55, 52, 58, 65, 62, 70, 68, 75, 72, 80, 78, 85, 82],
+      labels: ['Jan', '', 'Feb', '', 'Mar', '', 'Apr', '', 'May', '', 'Jun', '', 'Jul', '', '']
+    }
+  };
+
+  const rangeBtn = document.querySelectorAll('#donation-chart-range .chart-range-btn');
+  const barsContainer = document.getElementById('donation-bars');
+  const labelsContainer = document.getElementById('donation-labels');
+
+  function updateChart(period) {
+    const data = chartData[period];
+    if (!data) return;
+
+    // Update bars
+    const bars = barsContainer.querySelectorAll('.chart-bar');
+    bars.forEach((bar, idx) => {
+      const maxBars = data.bars.length;
+      if (idx < maxBars) {
+        bar.style.height = data.bars[idx] + '%';
+        bar.style.display = '';
+      } else {
+        bar.style.display = 'none';
+      }
+    });
+
+    // Add more bars if needed
+    if (data.bars.length > 15) {
+      while (barsContainer.children.length < data.bars.length) {
+        const newBar = document.createElement('div');
+        newBar.className = 'chart-bar';
+        barsContainer.appendChild(newBar);
+      }
+      const allBars = barsContainer.querySelectorAll('.chart-bar');
+      data.bars.forEach((height, idx) => {
+        allBars[idx].style.height = height + '%';
+        allBars[idx].style.display = '';
+      });
+    }
+
+    // Update labels
+    const labels = labelsContainer.querySelectorAll('.chart-x-label');
+    labels.forEach((label, idx) => {
+      label.textContent = data.labels[idx] || '';
+    });
+
+    // Update active button
+    rangeBtn.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`#donation-chart-range [data-period="${period}"]`).classList.add('active');
+  }
+
+  rangeBtn.forEach(btn => {
+    btn.addEventListener('click', function() {
+      updateChart(this.dataset.period);
+    });
+  });
+})();
+</script>
+
+<script>
+(function() {
+  const table = document.getElementById('donations-table');
+  const paginationContainer = document.getElementById('donations-pagination');
+  const pageButtons = paginationContainer.querySelectorAll('.pg-btn[data-page]');
+  const prevBtn = paginationContainer.querySelector('.pg-prev');
+  const nextBtn = paginationContainer.querySelector('.pg-next');
+  const pgCurrentSpan = document.getElementById('pg-current');
+  
+  const rowsPerPage = 5;
+  let currentPage = 1;
+
+  function showPage(page) {
+    const rows = table.querySelectorAll('tbody .donation-row');
+    rows.forEach(row => {
+      const rowPage = parseInt(row.dataset.page);
+      row.style.display = rowPage === page ? '' : 'none';
+    });
+
+    // Update active button
+    pageButtons.forEach(btn => btn.classList.remove('active'));
+    const activeBtn = paginationContainer.querySelector(`[data-page="${page}"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Update prev/next buttons
+    prevBtn.disabled = page === 1;
+    nextBtn.disabled = page === 3;
+
+    // Update info text
+    pgCurrentSpan.textContent = rowsPerPage;
+
+    currentPage = page;
+  }
+
+  // Page number buttons
+  pageButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const page = parseInt(this.dataset.page);
+      showPage(page);
+    });
+  });
+
+  // Previous button
+  prevBtn.addEventListener('click', function() {
+    if (currentPage > 1) {
+      showPage(currentPage - 1);
+    }
+  });
+
+  // Next button
+  nextBtn.addEventListener('click', function() {
+    if (currentPage < 3) {
+      showPage(currentPage + 1);
+    }
+  });
+
+  // Initialize
+  showPage(1);
+})();
+</script>
 
 <!-- ============================================================ -->
 <!-- FRAME 7: ADMIN — CAMPAIGNS LIST + CREATE                     -->
@@ -2306,12 +2451,12 @@ Join 87 donors already feeding children every single day. Every donation is trac
 
               <div class="admin-form-card">
                 <div class="admin-form-card-title">Visibility &amp; Options</div>
-                <div class="toggle-row"><div class="toggle-info">Published &amp; Active<small>Visible to all site visitors</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
-                <div class="toggle-row"><div class="toggle-info">Allow Monthly Giving<small>Stripe recurring subscription</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
-                <div class="toggle-row"><div class="toggle-info">Show Fundraising Progress Bar<small>Goal meter on campaign page</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
-                <div class="toggle-row"><div class="toggle-info">Show Donor Count<small>"87 donors" badge on widget</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
-                <div class="toggle-row"><div class="toggle-info">Feature on Homepage<small>Show in Programs section</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
-                <div class="toggle-row" style="border-bottom:none;"><div class="toggle-info">Allow Custom Amount<small>Donor can type any amount</small></div><div class="toggle-switch on"><div class="toggle-thumb"></div></div></div>
+                <div class="toggle-row"><div class="toggle-info">Published &amp; Active<small>Visible to all site visitors</small></div><div class="toggle-switch on" id="toggle-published" data-toggle="published"><div class="toggle-thumb"></div></div></div>
+                <div class="toggle-row"><div class="toggle-info">Allow Monthly Giving<small>Stripe recurring subscription</small></div><div class="toggle-switch on" id="toggle-monthly" data-toggle="monthly"><div class="toggle-thumb"></div></div></div>
+                <div class="toggle-row"><div class="toggle-info">Show Fundraising Progress Bar<small>Goal meter on campaign page</small></div><div class="toggle-switch on" id="toggle-progress" data-toggle="progress"><div class="toggle-thumb"></div></div></div>
+                <div class="toggle-row"><div class="toggle-info">Show Donor Count<small>"87 donors" badge on widget</small></div><div class="toggle-switch on" id="toggle-donorcount" data-toggle="donorcount"><div class="toggle-thumb"></div></div></div>
+                <div class="toggle-row"><div class="toggle-info">Feature on Homepage<small>Show in Programs section</small></div><div class="toggle-switch on" id="toggle-homepage" data-toggle="homepage"><div class="toggle-thumb"></div></div></div>
+                <div class="toggle-row" style="border-bottom:none;"><div class="toggle-info">Allow Custom Amount<small>Donor can type any amount</small></div><div class="toggle-switch on" id="toggle-customamt" data-toggle="customamt"><div class="toggle-thumb"></div></div></div>
               </div>
 
               <div class="admin-form-card">
@@ -2332,6 +2477,32 @@ Join 87 donors already feeding children every single day. Every donation is trac
     </div>
   </div>
 </div>
+
+<script>
+(function() {
+  const toggleSwitches = document.querySelectorAll('.toggle-switch[id]');
+  
+  toggleSwitches.forEach(toggle => {
+    toggle.style.cursor = 'pointer';
+    
+    // Initialize toggle state
+    if (!toggle.classList.contains('on') && !toggle.classList.contains('off')) {
+      toggle.classList.add('off');
+    }
+    
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (this.classList.contains('on')) {
+        this.classList.remove('on');
+        this.classList.add('off');
+      } else {
+        this.classList.remove('off');
+        this.classList.add('on');
+      }
+    });
+  });
+})();
+</script>
 
 <!-- ============================================================ -->
 <!-- FRAME 9: ADMIN — DONATIONS TABLE (detailed)                  -->
